@@ -1,39 +1,39 @@
 eth:
   - 'table_3'
-rgbdtum:
-  - 'rgbd_dataset_freiburg1_xyz'
-kitti:
- - '04'
-euroc:
-  - MH_01_easy
-replica:
-  - 'office0'
-tartanair:
-  - 'ME000' 
-nuim:
-  - 'traj0_frei_png'
-7scenes:
-  - 'chess_seq-01'
-msd:
-  - 'MIO07_mapping_easy'
-rover-t265:
-  - 'campus_small_autumn_t265'
-rover-d435i:
-  - 'campus_small_autumn_d435i'
-rover-picam:
-  - 'campus_small_autumn_picam'
-ut-coda:
-  - '0'
-s3li:
-  - 'vegetation'
-sesoko:
-  - ssk16
-  - ssk17
-  - ssk18
-openloris-d400:
-  - cafe1-1
-openloris-t265:
-  - cafe1-1
+# rgbdtum:
+#   - 'rgbd_dataset_freiburg1_xyz'
+# kitti:
+#  - '04'
+# euroc:
+#   - MH_01_easy
+# replica:
+#   - 'office0'
+# tartanair:
+#   - 'ME000' 
+# nuim:
+#   - 'traj0_frei_png'
+# 7scenes:
+#   - 'chess_seq-01'
+# openloris-d400:
+#   - cafe1-1
+# openloris-t265:
+#   - cafe1-1
+# msd:
+#   - 'MIO07_mapping_easy'
+# rover-t265:
+#   - 'campus_small_autumn_t265'
+# rover-d435i:
+#   - 'campus_small_autumn_d435i'
+# rover-picam:
+#   - 'campus_small_autumn_picam'
+# ut-coda:
+#   - '0'
+# s3li:
+#   - 'vegetation'
+# sesoko:
+#   - ssk16
+#   - ssk17
+#   - ssk18
 
 # sweetcorals:
 # - '_indonesia_tabuhan_p1_20250210'
