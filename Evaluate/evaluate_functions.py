@@ -86,7 +86,7 @@ def evaluate_sequence(exp, dataset, sequence_name, overwrite=False):
             # Find number of frames in the sequence
             rgb_exp_csv = trajectories_path / f"rgb_exp.csv"
             with open(rgb_exp_csv, "r") as file:
-                num_frames = sum(1 for _ in file)
+                num_frames = sum(1 for _ in file)-1
             accuracy.loc[accuracy["traj_name"] == trajectory_name_txt,"num_frames"] = num_frames
             exp_log.loc[run_mask, "num_frames"] = num_frames
 

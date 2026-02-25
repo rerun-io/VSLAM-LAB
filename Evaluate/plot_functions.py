@@ -1,22 +1,3 @@
-"""
-Module: VSLAM-LAB - Compare - plot_functions.py
-- Author: Alejandro Fontan Villacampa
-- Version: 1.0
-- Created: 2024-07-04
-- Updated: 2024-07-04
-- License: GPLv3 License
-- List of Known Dependencies;
-    * ...
-
-This module provides functions for generating various types of plots to visualize experiment data across multiple datasets and sequences.
-
-Functions included:
-- boxplot_exp_seq: Generates box plots for different experiments and sequences within multiple datasets.
-- radar_seq: Creates a radar plot showing the relative performance across different sequences and datasets based on a specified metric.
-- plot_cum_error: Generates and saves cumulative error plots for different datasets, sequences, and experiments.
-- create_and_show_canvas: Creates a canvas of resized images and displays it.
-"""
-
 import glob
 import math
 import os
@@ -69,22 +50,6 @@ logging.getLogger('matplotlib').setLevel(logging.ERROR)
 
 def robustMedian(arr):
     return np.nanmedian(arr) if np.isfinite(arr).any() else np.nan
-
-def copy_axes_properties(source_ax, target_ax):
-    for line in source_ax.get_lines():
-        target_ax.plot(line.get_xdata(), line.get_ydata(), color=line.get_color(), linestyle=line.get_linestyle())
-
-    for patch in source_ax.patches:
-        new_patch = patch.__class__(xy=patch.get_xy(), width=patch.get_width(), height=patch.get_height(),
-                                    color=patch.get_facecolor())
-        target_ax.add_patch(new_patch)
-
-    target_ax.set_xlim(source_ax.get_xlim())
-    target_ax.set_ylim(source_ax.get_ylim())
-
-    target_ax.set_xticks(source_ax.get_xticks())
-    target_ax.set_xticklabels(source_ax.get_xticklabels())
-
 
 def plot_trajectories(dataset_sequences, exp_names, 
                       dataset_nicknames, experiments,
@@ -160,7 +125,7 @@ def plot_trajectories(dataset_sequences, exp_names,
                         y_shift = 0
                         x_max = 1
                         y_max = 1
-                    #aligment_with_gt = True
+
                 search_pattern = os.path.join(vslam_lab_evaluation_folder_seq, '*_KeyFrameTrajectory.tum*')
                 files = glob.glob(search_pattern)
                 aligned_traj = pd.read_csv(files[idx], delimiter=' ')
@@ -211,7 +176,6 @@ def plot_trajectories(dataset_sequences, exp_names,
 
     plt.tight_layout()
     plot_name = os.path.join(comparison_path, f"trajectories.pdf")
-    #plt.savefig(plot_name, format='pdf')
 
     i_traj = 0
     for i_dataset, (dataset_name, sequence_names) in enumerate(dataset_sequences.items()):
@@ -303,10 +267,6 @@ def boxplot_exp_seq(values, dataset_sequences, metric_name, comparison_path, exp
             whisker_max[sequence_name] = np.nan
             whisker_min[sequence_name] = np.nan
         else:
-            # if whisker_max_seq + width > 0.055 and ('56a0ec536c' in sequence_name) :
-            #     whisker_max[sequence_name] = 0.03
-            #     whisker_min[sequence_name] = 0.02
-            # else:
             whisker_max[sequence_name] = whisker_max_seq + width
             if(whisker_min_seq - width < 0):    
                 whisker_min[sequence_name] = whisker_min_seq / 2
@@ -390,24 +350,6 @@ def boxplot_exp_seq(values, dataset_sequences, metric_name, comparison_path, exp
     plt.show(block=False)
 
 def radar_seq(values, dataset_sequences, exp_names, dataset_nicknames, metric_name, comparison_path, experiments):
-    """
-     ------------ Description:
-    This function creates a radar plot showing the relative performance across different sequences and datasets.
-    The performance metric (e.g., accuracy) is normalized by the global median value for each sequence.
-
-    ------------ Parameters:
-    values : dict
-        values[dataset_name][sequence_name][exp_name] = pandas.DataFrame()
-    dataset_sequences : dict
-        dataset_sequences[dataset_name] = list{sequence_names}
-    exp_names : list
-        exp_names = list{exp_names}
-    dataset_nicknames : dict
-        dataset_nicknames[dataset_name] = list{sequence_nicknames}
-    metric_name : string
-        metric_name = "accuracy"
-    """
-
     MAX_VALUE = 0.05
     MIN_TRAJ_COVERAGE = 0.75
     NORMALIZE_METRIC = False
@@ -450,21 +392,13 @@ def radar_seq(values, dataset_sequences, exp_names, dataset_nicknames, metric_na
                 values_dataset_sequence_exp = values[dataset_name][sequence_name][exp_name].copy()
                 data_empty = values_dataset_sequence_exp.empty
                 if data_empty:
-                    # values_dataset_sequence_exp = pd.DataFrame([{
-                    #     "rmse": pd.NA,                 # or 0.0 if you want a numeric default
-                    #     "num_tracked_frames": pd.NA,   # or 0
-                    #     "num_frames": pd.NA
-                    # }])
                     medians[dataset_name][sequence_name][exp_name] = np.nan                  
                     medians_num_tracked_frames[dataset_name][sequence_name][exp_name] = np.nan   
                     medians_num_frames[dataset_name][sequence_name][exp_name] = 0
                 else:
-                    ########### FILTERING !!!!!!!!!!!!!!!!!!!!!! ###############################################
-                    #values_dataset_sequence_exp['rmse'][values_dataset_sequence_exp['rmse'] > SEC_VALUE] = np.nan
-
                     medians[dataset_name][sequence_name][exp_name] = robustMedian(values_dataset_sequence_exp['rmse'])                  
                     medians_num_tracked_frames[dataset_name][sequence_name][exp_name] = robustMedian(values_dataset_sequence_exp['num_tracked_frames'])   
-                    medians_num_frames[dataset_name][sequence_name][exp_name] = int(robustMedian(values_dataset_sequence_exp['num_frames']) / 50) + 1
+                    medians_num_frames[dataset_name][sequence_name][exp_name] = int(robustMedian(values_dataset_sequence_exp['num_frames'])) + 1
 
                 if data_empty:
                     continue
@@ -607,24 +541,6 @@ def radar_seq(values, dataset_sequences, exp_names, dataset_nicknames, metric_na
 
 
 def plot_cum_error(values, dataset_sequences, exp_names, dataset_nicknames, metric_name, comparison_path, experiments):
-    """
-     ------------ Description:
-    This function generates and saves cumulative error plots for different datasets, sequences, and experiments.
-    It creates subplots for each sequence within a dataset and plots the cumulative error for each experiment.
-    The cumulative error is calculated as the number of values smaller than or equal to each data point.
-
-    ------------ Parameters:
-    values : dict
-        values[dataset_name][sequence_name][exp_name] = pandas.DataFrame()
-    dataset_sequences : dict
-        dataset_sequences[dataset_name] = list{sequence_names}
-    exp_names : list
-        exp_names = list{exp_names}
-    dataset_nicknames : dict
-        dataset_nicknames[dataset_name] = list{sequence_nicknames}
-    metric_name : string
-        metric_name = "accuracy"
-    """
     num_sequences = 0
     for dataset_name, sequence_names in dataset_sequences.items():
         num_sequences += len(sequence_names)
@@ -796,7 +712,7 @@ def num_tracked_frames(values, dataset_sequences, figures_path, experiments, sha
             values_seq_exp = values[splt['dataset_name']][sequence_name][exp_name]
             if not values_seq_exp.empty:
                 num_frames = values[splt['dataset_name']][sequence_name][exp_name]['num_frames']
-                max_rgb[sequence_name] = int(max(max(num_frames), max_rgb[sequence_name]) / 50) + 1
+                max_rgb[sequence_name] = int(max(max(num_frames), max_rgb[sequence_name])) + 1
                 ################################################################################
     for sequence_name, splt in splts.items():
         for i_exp, exp_name in enumerate(exp_names):
@@ -804,7 +720,7 @@ def num_tracked_frames(values, dataset_sequences, figures_path, experiments, sha
             if values_seq_exp.empty:
                 continue
 
-            num_frames = [int(value / 50 + 1) for value in values_seq_exp['num_frames']]
+            num_frames = [int(value) for value in values_seq_exp['num_frames']]
             num_tracked_frames = values_seq_exp['num_tracked_frames'] 
             num_evaluated_frames = values_seq_exp['num_evaluated_frames']   
          
