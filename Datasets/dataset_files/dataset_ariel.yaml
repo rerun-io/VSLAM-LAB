@@ -1,0 +1,17 @@
+dataset_name : ariel 
+
+rgb_hz: 20.0
+repo_id: "ntnu-arl/underwater-datasets"
+modes: ['mono', 'mono-vi', 'stereo', 'stereo-vi']
+cam_models: ['equid4']
+
+sequence_names:
+  - fjord_1
+  - fjord_2
+  - fjord_3
+  - fjord_4
+  - fjord_5
+  - fjord_6
+  - mclab_1
+  - mclab_2
+
