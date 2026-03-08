@@ -1,10 +1,10 @@
 dataset_name: sweetcorals
 
 rgb_hz: 2.0
-repo_id: "wildflow/sweet-corals"
 modes: ['mono']
 cam_models: ['pinhole']
 
+repo_id: "wildflow/sweet-corals"
 target_resolution: [640, 480]
 
 sequence_names:
@@ -21,3 +21,16 @@ sequence_names:
 - indonesia_watudodol_p4
 - indonesia_watudodol_p5
 - indonesia_watudodol_p6
+
+about:
+  license: CC-BY-4.0
+  summary: Coral reefs 3D photogrammetry
+  homepage: https://huggingface.co/datasets/wildflow/sweet-corals
+  authors:
+    - Sergei Nozdrenkov
+    - Others
+
+vslamlab_maintainer:
+  name: Alejandro Fontan
+  email: alejandro.fontan@qut.edu.au
+  date: 2026-03-07

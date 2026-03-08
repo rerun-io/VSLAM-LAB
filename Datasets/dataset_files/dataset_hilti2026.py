@@ -1,8 +1,8 @@
 import csv
 import os
+import subprocess
 from pathlib import Path
 from typing import Any
-import subprocess
 
 import gdown
 import numpy as np
@@ -33,7 +33,7 @@ class HILTI2026_dataset(DatasetVSLAMLab):
         self.url_download_root: str = cfg["url_download_root"]
 
         # Sequence nicknames
-        self.sequence_nicknames = [s.split('_', 1)[0] for s in self.sequence_names]
+        self.sequence_nicknames = [s.split("_", 1)[0] for s in self.sequence_names]
 
     def download_sequence_data(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
@@ -146,29 +146,46 @@ class HILTI2026_dataset(DatasetVSLAMLab):
         T_cam1_imu = np.array(cam1["T_cam_imu"], dtype=float).reshape(4, 4)
 
         rgb0: dict[str, Any] = {
-            "cam_name": "rgb_0", "cam_type": "gray",
-            "cam_model": "pinhole", "focal_length": intrinsics0[0:2], "principal_point": intrinsics0[2:4],
-            "distortion_type": "equid4", "distortion_coefficients": cam0["distortion_coeffs"],
+            "cam_name": "rgb_0",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": intrinsics0[0:2],
+            "principal_point": intrinsics0[2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam0["distortion_coeffs"],
             "fps": self.rgb_hz,
-            "T_BS": np.linalg.inv(T_cam0_imu)}
+            "T_BS": np.linalg.inv(T_cam0_imu),
+        }
 
         rgb1: dict[str, Any] = {
-             "cam_name": "rgb_1", "cam_type": "gray",
-             "cam_model": "pinhole", "focal_length": intrinsics1[0:2], "principal_point": intrinsics1[2:4],
-             "distortion_type": "equid4", "distortion_coefficients": cam1["distortion_coeffs"],
-             "fps": self.rgb_hz,
-             "T_BS": np.linalg.inv(T_cam1_imu)}
+            "cam_name": "rgb_1",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": intrinsics1[0:2],
+            "principal_point": intrinsics1[2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam1["distortion_coeffs"],
+            "fps": self.rgb_hz,
+            "T_BS": np.linalg.inv(T_cam1_imu),
+        }
 
         imu: dict[str, Any] = {
             "imu_name": "imu_0",
-            "a_max":  176.0, "g_max": 7.8,
-            "sigma_g_c": 0.00047032046, "sigma_a_c": 0.00285891188,
-            "sigma_bg": 0.0, "sigma_ba":  0.0,
-            "sigma_gw_c":  0.00036433633, "sigma_aw_c": 0.00130039805,
-            "g":  9.81007, "g0": [0.0, 0.0, 0.0], "a0": [0.0, 0.0, 0.0],
-            "s_a":  [1.0,  1.0, 1.0],
+            "a_max": 176.0,
+            "g_max": 7.8,
+            "sigma_g_c": 0.00047032046,
+            "sigma_a_c": 0.00285891188,
+            "sigma_bg": 0.0,
+            "sigma_ba": 0.0,
+            "sigma_gw_c": 0.00036433633,
+            "sigma_aw_c": 0.00130039805,
+            "g": 9.81007,
+            "g0": [0.0, 0.0, 0.0],
+            "a0": [0.0, 0.0, 0.0],
+            "s_a": [1.0, 1.0, 1.0],
             "fps": 1000.0,
-            "T_BS": np.array(np.eye(4)).reshape((4, 4))}
+            "T_BS": np.array(np.eye(4)).reshape((4, 4)),
+        }
 
         self.write_calibration_yaml(sequence_name=sequence_name, rgb=[rgb0, rgb1], imu=[imu])
 
@@ -179,7 +196,10 @@ class HILTI2026_dataset(DatasetVSLAMLab):
         tmp = groundtruth_csv.with_suffix(".csv.tmp")
 
         if gt_txt.exists():
-            with open(gt_txt, "r", encoding="utf-8") as fin, open(tmp, "w", encoding="utf-8", newline="") as fout:
+            with (
+                open(gt_txt, "r", encoding="utf-8") as fin,
+                open(tmp, "w", encoding="utf-8", newline="") as fout,
+            ):
                 # Skip first lines (header/comments), then write CSV header + values
                 lines = fin.readlines()
                 data_lines = [ln.strip() for ln in lines[1:] if ln.strip() and not ln.lstrip().startswith("#")]
@@ -262,15 +282,13 @@ class HILTI2026_dataset(DatasetVSLAMLab):
 
     def _get_gt_url(self, sequence_name):
         if sequence_name == "floor_1_2025_05_05":
-           return "https://drive.google.com/file/d/1vfSWB1MKa2OGWZXxt6TkmI_kvvf5CupX/view?usp=sharing"
+            return "https://drive.google.com/file/d/1vfSWB1MKa2OGWZXxt6TkmI_kvvf5CupX/view?usp=sharing"
         if sequence_name == "floor_2_2025_05_05":
-           return "https://drive.google.com/file/d/1Gr7WPdfqZ5xP-lC8rSRnQngHo-UuVgcL/view?usp=sharing"
+            return "https://drive.google.com/file/d/1Gr7WPdfqZ5xP-lC8rSRnQngHo-UuVgcL/view?usp=sharing"
         if sequence_name == "floor_2_2025_10_28_run_1":
-           return "https://drive.google.com/file/d/1lTwd7udC34k_WaJa-_EE1mkcHP_V01NS/view?usp=sharing"
+            return "https://drive.google.com/file/d/1lTwd7udC34k_WaJa-_EE1mkcHP_V01NS/view?usp=sharing"
         if sequence_name == "floor_2_2025_10_28_run_2":
-           return "https://drive.google.com/file/d/12XG4WFYg3HgeSeECcWRzCXyljiYEsbSH/view?usp=sharing"
+            return "https://drive.google.com/file/d/12XG4WFYg3HgeSeECcWRzCXyljiYEsbSH/view?usp=sharing"
         if sequence_name == "floor_UG1_2025_10_16":
-           return "https://drive.google.com/file/d/1RZC-DYTN0-rtKNQCxhLjtrcs_CdhP88s/view?usp=sharing"
+            return "https://drive.google.com/file/d/1RZC-DYTN0-rtKNQCxhLjtrcs_CdhP88s/view?usp=sharing"
         return None
-
-

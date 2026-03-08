@@ -1,20 +1,15 @@
-import os
-import cv2
 import csv
-import yaml
-import tqdm
-import pandas as pd
-from pathlib import Path
-import shutil
+import os
 import subprocess
-import numpy as np
+from pathlib import Path
 from typing import Any
-from scipy.spatial.transform import Rotation as R
+
+import numpy as np
+import pandas as pd
+import yaml
 
 from Datasets.DatasetVSLAMLab import DatasetVSLAMLab
-from utilities import downloadFile
-from utilities import decompressFile
-from Datasets.DatasetVSLAMLab_utilities import undistort_fisheye
+from utilities import decompressFile, downloadFile
 
 SCRIPT_LABEL = f"\033[95m[{os.path.basename(__file__)}]\033[0m "
 
@@ -33,21 +28,21 @@ class HILTI2022_dataset(DatasetVSLAMLab):
         self.url_download_root: str = cfg["url_download_root"]
 
         # Create sequence_nicknames
-        self.sequence_nicknames = [s.split('_', 1)[0] for s in self.sequence_names]
+        self.sequence_nicknames = [s.split("_", 1)[0] for s in self.sequence_names]
 
     def download_sequence_data(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
-        sequence_path.mkdir(parents=True, exist_ok=True) 
+        sequence_path.mkdir(parents=True, exist_ok=True)
 
         # Download rosbag
-        rosbag = sequence_name + '.bag'
+        rosbag = sequence_name + ".bag"
         rosbag_path = sequence_path / rosbag
         if not rosbag_path.exists():
             download_url = f"{self.url_download_root}/{rosbag}"
             downloadFile(download_url, sequence_path)
 
         # Download calibration files
-        decompressed_folder = self.dataset_path / 'calibration_files'
+        decompressed_folder = self.dataset_path / "calibration_files"
         if not decompressed_folder.exists():
             compressed_name_ext = "2022322_calibration_files.zip"
             cal_url = f"{self.url_download_root}/{compressed_name_ext}"
@@ -65,7 +60,7 @@ class HILTI2022_dataset(DatasetVSLAMLab):
 
     def create_rgb_folder(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
-        
+
         rosbag_name = f"{sequence_name}.bag"
         rosbag = sequence_path / rosbag_name
         for cam in ["0", "1"]:
@@ -74,8 +69,10 @@ class HILTI2022_dataset(DatasetVSLAMLab):
             if rgb_path.exists():
                 continue
             rgb_path.mkdir(parents=True, exist_ok=True)
-            command = f"pixi run -e ros1 extract-rosbag-frames --rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
-            subprocess.run(command, shell=True)     
+
+            inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
+            command = f"pixi run -e ros1 extract-rosbag-frames {inputs}"
+            subprocess.run(command, shell=True)
 
     def create_rgb_csv(self, sequence_name: str) -> None:
         pass
@@ -88,7 +85,9 @@ class HILTI2022_dataset(DatasetVSLAMLab):
         imu_csv = sequence_path / "imu_0.csv"
         if imu_csv.exists():
             return
-        command = f"pixi run -e ros1 extract-rosbag-imu --rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {imu_topic}"
+
+        inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {imu_topic}"
+        command = f"pixi run -e ros1 extract-rosbag-imu {inputs}"
         subprocess.run(command, shell=True)
 
         rgb_csv = sequence_path / "rgb.csv"
@@ -100,9 +99,9 @@ class HILTI2022_dataset(DatasetVSLAMLab):
         rgb_1_ts_col = "ts_rgb_1 (ns)"
         imu_ts_col = "ts (ns)"
 
-        imu[imu_ts_col] = imu[imu_ts_col].astype("int64") 
-        rgb[rgb_0_ts_col] = rgb[rgb_0_ts_col].astype("int64") 
-        rgb[rgb_1_ts_col] = rgb[rgb_1_ts_col].astype("int64") 
+        imu[imu_ts_col] = imu[imu_ts_col].astype("int64")
+        rgb[rgb_0_ts_col] = rgb[rgb_0_ts_col].astype("int64")
+        rgb[rgb_1_ts_col] = rgb[rgb_1_ts_col].astype("int64")
 
         rgb.to_csv(rgb_csv, index=False)
         imu.to_csv(imu_csv, index=False)
@@ -120,28 +119,48 @@ class HILTI2022_dataset(DatasetVSLAMLab):
         T_cam0_imu = np.array(cam0["T_cam_imu"], dtype=float).reshape(4, 4)
         T_cam1_imu = np.array(cam1["T_cam_imu"], dtype=float).reshape(4, 4)
 
-        rgb0: dict[str, Any] = {"cam_name": "rgb_0", "cam_type": "gray",
-                "cam_model": "pinhole", "focal_length": cam0["intrinsics"][0:2], "principal_point": cam0["intrinsics"][2:4],
-                "distortion_type": "equid4", "distortion_coefficients": cam0["distortion_coeffs"],
-                "fps": self.rgb_hz,
-                "T_BS": np.linalg.inv(T_cam0_imu)}
-        
-        rgb1: dict[str, Any] = {"cam_name": "rgb_1", "cam_type": "gray",
-                "cam_model": "pinhole", "focal_length": cam1["intrinsics"][0:2], "principal_point": cam1["intrinsics"][2:4],
-                "distortion_type": "equid4", "distortion_coefficients": cam1["distortion_coeffs"],
-                "fps": self.rgb_hz,
-                "T_BS": np.linalg.inv(T_cam1_imu)}
-        
-        imu: dict[str, Any] = {"imu_name": "imu_0",
-            "a_max":  176.0, "g_max": 7.8,
-            "sigma_g_c":  20.0e-4, "sigma_a_c": 20.0e-3,
-            "sigma_bg":  0.01, "sigma_ba":  0.1,
-            "sigma_gw_c":  20.0e-5, "sigma_aw_c": 20.0e-3,
-            "g":  9.81007, "g0": [ 0.0, 0.0, 0.0 ], "a0": [ 0.1, 0.04, 0.15 ],
-            "s_a":  [ 1.0,  1.0, 1.0 ],
+        rgb0: dict[str, Any] = {
+            "cam_name": "rgb_0",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": cam0["intrinsics"][0:2],
+            "principal_point": cam0["intrinsics"][2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam0["distortion_coeffs"],
+            "fps": self.rgb_hz,
+            "T_BS": np.linalg.inv(T_cam0_imu),
+        }
+
+        rgb1: dict[str, Any] = {
+            "cam_name": "rgb_1",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": cam1["intrinsics"][0:2],
+            "principal_point": cam1["intrinsics"][2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam1["distortion_coeffs"],
+            "fps": self.rgb_hz,
+            "T_BS": np.linalg.inv(T_cam1_imu),
+        }
+
+        imu: dict[str, Any] = {
+            "imu_name": "imu_0",
+            "a_max": 176.0,
+            "g_max": 7.8,
+            "sigma_g_c": 20.0e-4,
+            "sigma_a_c": 20.0e-3,
+            "sigma_bg": 0.01,
+            "sigma_ba": 0.1,
+            "sigma_gw_c": 20.0e-5,
+            "sigma_aw_c": 20.0e-3,
+            "g": 9.81007,
+            "g0": [0.0, 0.0, 0.0],
+            "a0": [0.1, 0.04, 0.15],
+            "s_a": [1.0, 1.0, 1.0],
             "fps": 200.0,
-            "T_BS": np.array(np.eye(4)).reshape((4, 4))}
-        
+            "T_BS": np.array(np.eye(4)).reshape((4, 4)),
+        }
+
         self.write_calibration_yaml(sequence_name=sequence_name, rgb=[rgb0, rgb1], imu=[imu])
 
     def create_groundtruth_csv(self, sequence_name):
@@ -151,7 +170,10 @@ class HILTI2022_dataset(DatasetVSLAMLab):
         groundtruth_csv = sequence_path / "groundtruth.csv"
         tmp = groundtruth_csv.with_suffix(".csv.tmp")
 
-        with open(groundtruth_txt, "r", encoding="utf-8") as fin, open(tmp, "w", newline="", encoding="utf-8") as fout:
+        with (
+            open(groundtruth_txt, "r", encoding="utf-8") as fin,
+            open(tmp, "w", newline="", encoding="utf-8") as fout,
+        ):
             w = csv.writer(fout)
             w.writerow(["ts (ns)", "tx (m)", "ty (m)", "tz (m)", "qx", "qy", "qz", "qw"])
             for idx, line in enumerate(fin, start=0):
@@ -161,61 +183,27 @@ class HILTI2022_dataset(DatasetVSLAMLab):
                 parts = line.split()
                 if len(parts) != 8:
                     raise ValueError(
-                        f"Invalid groundtruth line {idx + 1} in {groundtruth_txt}: "
-                        f"expected 8 columns, got {len(parts)}"
+                        f"Invalid groundtruth line {idx + 1} in {groundtruth_txt}: expected 8 columns, got {len(parts)}"
                     )
 
                 ts_s, tx, ty, tz, qx, qy, qz, qw = parts
                 ts_ns = int(round(float(ts_s) * 1e9))
-                w.writerow([
-                    ts_ns,
-                    float(tx),
-                    float(ty),
-                    float(tz),
-                    float(qx),
-                    float(qy),
-                    float(qz),
-                    float(qw),
-                ])
+                w.writerow(
+                    [
+                        ts_ns,
+                        float(tx),
+                        float(ty),
+                        float(tz),
+                        float(qx),
+                        float(qy),
+                        float(qz),
+                        float(qw),
+                    ]
+                )
         tmp.replace(groundtruth_csv)
-        # sequence_path = os.path.join(self.dataset_path, sequence_name)
-
-        # gt_name = self.get_gt_name(sequence_name)
-        # groundtruth_txt = os.path.join(sequence_path, 'groundtruth.txt')
-        # groundtruth_txt_0 = os.path.join(sequence_path, gt_name)
-
-        # T_cam_imu = self.get_transformation_from_yaml()
-        # T_imu_cam = np.linalg.inv(T_cam_imu)
-
-        # with open(groundtruth_txt_0, 'r') as source_file, open(groundtruth_txt, 'w') as destination_file:
-        #     for idx, line in enumerate(source_file, start=0):
-        #         line = line.strip()
-        #         values = line.split(' ')
-
-        #         # Extract values
-        #         ts = values[0]
-        #         t_w_imu = np.array([float(values[1]), float(values[2]), float(values[3])])
-        #         qx, qy, qz, qw = map(float, values[4:8])
-        #         R_w_imu = R.from_quat([qx, qy, qz, qw]).as_matrix()
-        #         T_w_imu = np.eye(4)
-        #         T_w_imu[:3, :3] = R_w_imu
-        #         T_w_imu[:3, 3] = t_w_imu
-
-        #         # Compute transformation
-        #         T_w_cam = np.dot(T_w_imu, T_imu_cam)
-
-        #         R_w_cam = T_w_cam[:3, :3]
-        #         t_w_cam = T_w_cam[:3, 3]
-
-        #         q_cam = R.from_matrix(R_w_cam).as_quat()  # [qx, qy, qz, qw]
-        #         tx, ty, tz = t_w_cam
-
-        #         # Write to the output file
-        #         line2 = f"{ts} {tx} {ty} {tz} {q_cam[0]} {q_cam[1]} {q_cam[2]} {q_cam[3]}\n"
-        #         destination_file.write(line2)
 
     def get_gt_name(self, sequence_name):
         if sequence_name == "exp04_construction_upper_level":
-           return "exp01_construction_ground_level.txt"
+            return "exp01_construction_ground_level.txt"
         if sequence_name == "exp14_basement_2":
-           return "exp14_basement_2_imu.txt"
+            return "exp14_basement_2_imu.txt"

@@ -1,10 +1,10 @@
 """
-check_dataset_files.py
+validate_dataset_files.py
 ----------------------
 Loads and validates a VSLAM-LAB dataset .py + .yaml file pair.
 
 Usage:
-    python check_dataset_files.py \
+    python validate_dataset_files.py \
         --py   dataset_hilti2026.py \
         --yaml dataset_hilti2026.yaml
 
@@ -43,7 +43,7 @@ def fail_red(msg: str) -> None: console.print(f"  [bold red]✗[/bold red] [red]
 # 1. File existence
 # ──────────────────────────────────────────────
 
-def check_files_exist(py_path: Path, yaml_path: Path) -> bool:
+def check_files_exist(py_path: Path, yaml_path: Path, dataset_name: str, vslam_lab_root: Path) -> bool:
     section("1. File existence")
     all_ok = True
     for p in (py_path, yaml_path):
@@ -52,6 +52,16 @@ def check_files_exist(py_path: Path, yaml_path: Path) -> bool:
         else:
             fail(f"Missing: [dim]{p}[/dim]")
             all_ok = False
+
+    configs_path = vslam_lab_root / "configs"
+    for config_file in [f"test_exp_{dataset_name}.yaml", f"test_config_{dataset_name}.yaml"]:
+        full_path = configs_path / config_file
+        if full_path.exists():
+            ok(f"Found: [dim]{full_path}[/dim]")
+        else:
+            fail_red(f"Missing: [bold]{config_file}[/bold] (expected at [dim]{full_path}[/dim])")
+            all_ok = False
+
     return all_ok
 
 
@@ -271,11 +281,11 @@ def check_required_methods(py_path: Path, yaml_data: dict | None = None) -> None
 
 
 # ──────────────────────────────────────────────
-# 9. os.path.join usage
+# 8. Code style issues
 # ──────────────────────────────────────────────
 
 def check_os_path_join(py_path: Path) -> None:
-    section("9. os.path.join usage")
+    section("8. Code style issues")
     try:
         tree = ast.parse(py_path.read_text(encoding="utf-8"))
     except SyntaxError:
@@ -302,14 +312,15 @@ def check_os_path_join(py_path: Path) -> None:
             fail_red(f"[bold]os.path.join[/bold] found at line [bold]{lineno}[/bold] — use [bold]Path / operator[/bold] instead")
 
 
+
 # ──────────────────────────────────────────────
-# 8. PEP 8 compliance
+# 9. PEP 8 compliance
 # ──────────────────────────────────────────────
 
 PEP8_SHOW_LIMIT = 5
 
 def check_pep8(py_path: Path) -> None:
-    section("8. PEP 8 compliance")
+    section("9. PEP 8 compliance")
     try:
         import pycodestyle
     except ImportError:
@@ -343,9 +354,118 @@ def check_pep8(py_path: Path) -> None:
 
     console.print()
     console.print("  [bold yellow]To fix automatically, run:[/bold yellow]")
-    console.print(f"    [dim]ruff check {py_path} --line-length 120[/dim]")
-    console.print(f"    [dim]ruff format {py_path} --line-length 120[/dim]")
-    console.print(f"    [dim]isort {py_path}[/dim]")
+    console.print(f"    [dim]pixi run -e development ruff check {py_path} --line-length 120[/dim]")
+    console.print(f"    [dim]pixi run -e development ruff format {py_path} --line-length 120[/dim]")
+    console.print(f"    [dim]pixi run -e development isort {py_path}[/dim]")
+
+
+# ──────────────────────────────────────────────
+# 10. get_dataset.py registration
+# ──────────────────────────────────────────────
+
+def check_get_dataset_registration(py_path: Path, yaml_data: dict | None, get_dataset_path: Path) -> None:
+    section("10. get_dataset.py registration")
+
+    if not get_dataset_path.exists():
+        warn(f"get_dataset.py not found at [dim]{get_dataset_path}[/dim] — skipping.")
+        return
+
+    # Get expected values from the dataset .py
+    try:
+        tree = ast.parse(py_path.read_text(encoding="utf-8"))
+    except SyntaxError:
+        warn("Skipping — dataset .py has syntax errors.")
+        return
+
+    # Find the class name defined in the .py file
+    class_names = [n.name for n in ast.walk(tree) if isinstance(n, ast.ClassDef)]
+    if not class_names:
+        warn("No class definition found in dataset .py — skipping.")
+        return
+    class_name = class_names[0]
+
+    # Get dataset_name from yaml
+    dataset_name = (yaml_data or {}).get("dataset_name", "")
+    module_stem  = py_path.stem  # e.g. dataset_hilti2026
+
+    # Parse get_dataset.py source
+    gd_source = get_dataset_path.read_text(encoding="utf-8")
+
+    # Check 1: import line
+    expected_import = f"from Datasets.dataset_files.{module_stem} import {class_name}"
+    if expected_import in gd_source:
+        ok(f"import found: [dim]{expected_import}[/dim]")
+    else:
+        fail_red(f"Missing import in get_dataset.py: [bold]{expected_import}[/bold]")
+
+    # Check 2: switcher entry
+    expected_switcher = f'"{dataset_name}": lambda: {class_name}(benchmark_path)'
+    if expected_switcher in gd_source:
+        ok(f"switcher entry found: [dim]\"{dataset_name}\": lambda: {class_name}(benchmark_path)[/dim]")
+    else:
+        fail_red(f"Missing switcher entry in get_dataset.py: [bold]\"{dataset_name}\": lambda: {class_name}(benchmark_path)[/bold]")
+
+
+# ──────────────────────────────────────────────
+# 11. README.md table row
+# ──────────────────────────────────────────────
+
+def check_readme_row(yaml_data: dict | None, readme_path: Path) -> None:
+    section("11. README.md table row")
+
+    if not readme_path.exists():
+        warn(f"README.md not found at [dim]{readme_path}[/dim] — skipping.")
+        return
+
+    if yaml_data is None:
+        warn("No YAML data — skipping.")
+        return
+
+    dataset_name = yaml_data.get("dataset_name", "")
+    modes        = yaml_data.get("modes", [])
+    cam_models   = yaml_data.get("cam_models", [])
+
+    readme = readme_path.read_text(encoding="utf-8")
+
+    # Find the row containing the dataset label
+    row = None
+    for line in readme.splitlines():
+        if f"`{dataset_name}`" in line and line.strip().startswith("|"):
+            row = line
+            break
+
+    if row is None:
+        fail_red(f"No README.md table row found containing label [bold]`{dataset_name}`[/bold]")
+        return
+
+    ok(f"Table row found for [bold]`{dataset_name}`[/bold]")
+
+    # Expand shorthand notations like mono(-vi) -> mono, mono-vi
+    import re
+    expanded_modes: set[str] = set()
+    for m in re.findall(r"`([^`]+)`", row):
+        if "(-vi)" in m:
+            base = m.replace("(-vi)", "")
+            expanded_modes.add(base)
+            expanded_modes.add(base + "-vi")
+        else:
+            expanded_modes.add(m)
+
+    # Check each mode appears in the row
+    for mode in modes:
+        if mode in expanded_modes:
+            ok(f"mode [bold]`{mode}`[/bold] present in row")
+        else:
+            fail_red(f"mode [bold]`{mode}`[/bold] NOT found in README row")
+
+    # Check each cam_model appears in the row
+    for cam in cam_models:
+        if cam in row:
+            ok(f"cam_model [bold]`{cam}`[/bold] present in row")
+        else:
+            fail_red(f"cam_model [bold]`{cam}`[/bold] NOT found in README row")
+
+
 
 # ──────────────────────────────────────────────
 # Main
@@ -379,29 +499,35 @@ def main() -> None:
     args = parser.parse_args()
 
     py_path, yaml_path = resolve_dataset_paths(args.dataset_name)
+    get_dataset_path = VSLAM_LAB_ROOT / "Datasets" / "get_dataset.py"
+    readme_path = VSLAM_LAB_ROOT / "README.md"
 
     console.print()
+    configs_path = VSLAM_LAB_ROOT / "configs"
     console.print(Panel.fit(
-        f"[bold]dataset[/bold] → [dim]{args.dataset_name}[/dim]\n"
-        f"[bold]py[/bold]      → [dim]{py_path}[/dim]\n"
-        f"[bold]yaml[/bold]    → [dim]{yaml_path}[/dim]",
+        f"[bold]dataset[/bold]     → [dim]{args.dataset_name}[/dim]\n"
+        f"[bold]py[/bold]          → [dim]{py_path}[/dim]\n"
+        f"[bold]yaml[/bold]        → [dim]{yaml_path}[/dim]\n"
+        f"[bold]test_exp[/bold]    → [dim]{configs_path / f'test_exp_{args.dataset_name}.yaml'}[/dim]\n"
+        f"[bold]test_config[/bold] → [dim]{configs_path / f'test_config_{args.dataset_name}.yaml'}[/dim]",
         title="[bold cyan]Dataset File Checker[/bold cyan]",
         border_style="cyan",
     ))
 
-    if not check_files_exist(py_path, yaml_path):
+    if not check_files_exist(py_path, yaml_path, args.dataset_name, VSLAM_LAB_ROOT):
         sys.exit(1)
 
     yaml_data = load_yaml(yaml_path)
     check_python_syntax(py_path)
     load_python_module(py_path)
-    check_required_methods(py_path, yaml_data)
-    check_os_path_join(py_path)
-    check_pep8(py_path)
-
     if yaml_data is not None:
         check_yaml_keys(yaml_data)
         check_yaml_values(yaml_data, py_path, yaml_path)
+    check_required_methods(py_path, yaml_data)
+    check_os_path_join(py_path)
+    check_pep8(py_path)
+    check_get_dataset_registration(py_path, yaml_data, get_dataset_path)
+    check_readme_row(yaml_data, readme_path)
 
     console.print()
     console.print(Rule("[bold cyan]Done[/bold cyan]", style="cyan"))

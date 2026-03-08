@@ -1,23 +1,22 @@
-import cv2
+import csv
 import json
-from typing import Any
+import os
 import subprocess
-import numpy as np
-from tqdm import tqdm
-import os, yaml, shutil
 from pathlib import Path
+from typing import Any
+
+import numpy as np
 import pandas as pd
 import yaml
-import csv
-
-from huggingface_hub import login
-from huggingface_hub import HfApi, HfFileSystem
+from huggingface_hub import HfApi, HfFileSystem, login
 from huggingface_hub.utils import disable_progress_bars
+from tqdm import tqdm
 
-from path_constants import HUGGINGFACE_TOKEN
 from Datasets.DatasetVSLAMLab import DatasetVSLAMLab
+from path_constants import HUGGINGFACE_TOKEN
 
 INITIAL_TIMESTAMP: int = 1_700_604_776_000_000_000
+
 
 class ARIEL_dataset(DatasetVSLAMLab):
     """ARIEL dataset helper for VSLAM-LAB benchmark."""
@@ -30,10 +29,10 @@ class ARIEL_dataset(DatasetVSLAMLab):
             cfg = yaml.safe_load(f) or {}
 
         # Get download url
-        self.repo_id = cfg['repo_id']
+        self.repo_id = cfg["repo_id"]
 
         # Create sequence_nicknames
-        self.sequence_nicknames = [s.replace('_', ' ') for s in self.sequence_names]
+        self.sequence_nicknames = [s.replace("_", " ") for s in self.sequence_names]
 
     def download_sequence_data(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
@@ -42,7 +41,7 @@ class ARIEL_dataset(DatasetVSLAMLab):
         calibration_folder = self.dataset_path / "calibrations"
 
         if HUGGINGFACE_TOKEN is not None:
-            login(token=HUGGINGFACE_TOKEN) 
+            login(token=HUGGINGFACE_TOKEN)
             token = HUGGINGFACE_TOKEN
         else:
             token = os.environ.get("HF_TOKEN")
@@ -67,25 +66,21 @@ class ARIEL_dataset(DatasetVSLAMLab):
             files = [f for f in all_files if f.startswith(remote_folder + "/")]
             for remote_file in tqdm(files, desc="Downloading calibration files", unit="file"):
                 local_file = self.dataset_path / remote_file
-                fs.get_file(
-                    f"datasets/{self.repo_id}/{remote_file}",
-                    str(local_file))
+                fs.get_file(f"datasets/{self.repo_id}/{remote_file}", str(local_file))
 
         # Download rosbag
         if rosbag.exists():
             return
-        
+
         remote_folder = self._remote_folder(sequence_name)
         files = [f for f in all_files if f.startswith(remote_folder + "/")]
         for remote_file in tqdm(files, desc="Downloading rosbag files", unit="file"):
             local_file = sequence_path / Path(remote_file).name
-            fs.get_file(
-                f"datasets/{self.repo_id}/{remote_file}",
-                str(local_file)            )
-            
+            fs.get_file(f"datasets/{self.repo_id}/{remote_file}", str(local_file))
+
     def create_rgb_folder(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
-        
+
         rosbag_name = f"{sequence_name}.bag"
         rosbag = sequence_path / rosbag_name
 
@@ -95,9 +90,11 @@ class ARIEL_dataset(DatasetVSLAMLab):
             if rgb_path.exists():
                 continue
             rgb_path.mkdir(parents=True, exist_ok=True)
-            command = f"pixi run -e ros1 extract-rosbag-frames --rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
+
+            inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
+            command = f"pixi run -e ros1 extract-rosbag-frames {inputs}"
             subprocess.run(command, shell=True)
-        
+
     def create_rgb_csv(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
         rgb_csv = sequence_path / "rgb.csv"
@@ -138,7 +135,9 @@ class ARIEL_dataset(DatasetVSLAMLab):
         imu_csv = sequence_path / "imu_0.csv"
         if imu_csv.exists():
             return
-        command = f"pixi run -e ros1 extract-rosbag-imu --rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {imu_topic}"
+
+        inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {imu_topic}"
+        command = f"pixi run -e ros1 extract-rosbag-imu {inputs}"
         subprocess.run(command, shell=True)
 
         rgb_csv = sequence_path / "rgb.csv"
@@ -160,12 +159,16 @@ class ARIEL_dataset(DatasetVSLAMLab):
 
     def create_calibration_yaml(self, sequence_name: str) -> None:
         calibration_folder = self.dataset_path / "calibrations"
-        intrinsics_water_yaml = calibration_folder / "cam0_cam1_stereo" / "intrinsics_water" / "camchain-stereo-intrinsics-underwater.yaml"
-        extrinsics_air = calibration_folder / "cam0_cam1_stereo" / "extrinsics_air" / "camchain-imucam-stereo-extrinsics-air.yaml"
+        intrinsics_water_yaml = (
+            calibration_folder / "cam0_cam1_stereo" / "intrinsics_water" / "camchain-stereo-intrinsics-underwater.yaml"
+        )
+        extrinsics_air = (
+            calibration_folder / "cam0_cam1_stereo" / "extrinsics_air" / "camchain-imucam-stereo-extrinsics-air.yaml"
+        )
 
         with intrinsics_water_yaml.open("r", encoding="utf-8") as f:
             data_int = yaml.safe_load(f)
-        
+
         with extrinsics_air.open("r", encoding="utf-8") as f:
             data_ext = yaml.safe_load(f)
 
@@ -177,39 +180,57 @@ class ARIEL_dataset(DatasetVSLAMLab):
         T_cam0_imu = np.array(cam0_ext["T_cam_imu"], dtype=float).reshape(4, 4)
         T_cam1_imu = np.array(cam1_ext["T_cam_imu"], dtype=float).reshape(4, 4)
 
-        rgb0: dict[str, Any] = {"cam_name": "rgb_0", "cam_type": "gray",
-                "cam_model": "pinhole", "focal_length": cam0_int["intrinsics"][0:2], "principal_point": cam0_int["intrinsics"][2:4],
-                "distortion_type": "equid4", "distortion_coefficients": cam0_int["distortion_coeffs"],
-                "fps": self.rgb_hz,
-                "T_BS": np.linalg.inv(T_cam0_imu)}
-        
-        rgb1: dict[str, Any] = {"cam_name": "rgb_1", "cam_type": "gray",
-                "cam_model": "pinhole", "focal_length": cam1_int["intrinsics"][0:2], "principal_point": cam1_int["intrinsics"][2:4],
-                "distortion_type": "equid4", "distortion_coefficients": cam1_int["distortion_coeffs"],
-                "fps": self.rgb_hz,
-                "T_BS": np.linalg.inv(T_cam1_imu)}
-        
-        imu: dict[str, Any] = {"imu_name": "imu_0",
-            "a_max":  176.0, "g_max": 7.8,
-            "sigma_g_c":  5.87e-04, "sigma_a_c": 1.86e-02,
-            "sigma_bg":  0.0, "sigma_ba":  0.,
-            "sigma_gw_c":  2.866e-03, "sigma_aw_c": 4.33e-03,
-            "g":  9.81007, "g0": [ 0.0, 0.0, 0.0 ], "a0": [ 0.0, 0.0, 0.0 ],
-            "s_a":  [ 1.0,  1.0, 1.0 ],
+        rgb0: dict[str, Any] = {
+            "cam_name": "rgb_0",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": cam0_int["intrinsics"][0:2],
+            "principal_point": cam0_int["intrinsics"][2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam0_int["distortion_coeffs"],
+            "fps": self.rgb_hz,
+            "T_BS": np.linalg.inv(T_cam0_imu),
+        }
+
+        rgb1: dict[str, Any] = {
+            "cam_name": "rgb_1",
+            "cam_type": "gray",
+            "cam_model": "pinhole",
+            "focal_length": cam1_int["intrinsics"][0:2],
+            "principal_point": cam1_int["intrinsics"][2:4],
+            "distortion_type": "equid4",
+            "distortion_coefficients": cam1_int["distortion_coeffs"],
+            "fps": self.rgb_hz,
+            "T_BS": np.linalg.inv(T_cam1_imu),
+        }
+
+        imu: dict[str, Any] = {
+            "imu_name": "imu_0",
+            "a_max": 176.0,
+            "g_max": 7.8,
+            "sigma_g_c": 5.87e-04,
+            "sigma_a_c": 1.86e-02,
+            "sigma_bg": 0.0,
+            "sigma_ba": 0.0,
+            "sigma_gw_c": 2.866e-03,
+            "sigma_aw_c": 4.33e-03,
+            "g": 9.81007,
+            "g0": [0.0, 0.0, 0.0],
+            "a0": [0.0, 0.0, 0.0],
+            "s_a": [1.0, 1.0, 1.0],
             "fps": 200.0,
-            "T_BS": np.array(np.eye(4)).reshape((4, 4))}
-        
+            "T_BS": np.array(np.eye(4)).reshape((4, 4)),
+        }
+
         self.write_calibration_yaml(sequence_name=sequence_name, rgb=[rgb0, rgb1], imu=[imu])
-     
+
     def create_groundtruth_csv(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
-        groundtruth_tum = sequence_path / f"{sequence_name}_baseline.tum" 
+        groundtruth_tum = sequence_path / f"{sequence_name}_baseline.tum"
         groundtruth_csv = sequence_path / "groundtruth.csv"
         tmp = groundtruth_csv.with_suffix(".csv.tmp")
 
-        with open(groundtruth_tum, "r", encoding="utf-8") as fin, \
-            open(tmp, "w", newline="", encoding="utf-8") as fout:
-
+        with open(groundtruth_tum, "r", encoding="utf-8") as fin, open(tmp, "w", newline="", encoding="utf-8") as fout:
             w = csv.writer(fout)
             w.writerow(["ts (ns)", "tx (m)", "ty (m)", "tz (m)", "qx", "qy", "qz", "qw"])
 
@@ -232,16 +253,18 @@ class ARIEL_dataset(DatasetVSLAMLab):
                 # TUM timestamp is usually in seconds -> convert to nanoseconds
                 ts_ns = int(round(float(ts_s) * 1e9)) - INITIAL_TIMESTAMP
 
-                w.writerow([
-                    ts_ns,
-                    float(tx),
-                    float(ty),
-                    float(tz),
-                    float(qx),
-                    float(qy),
-                    float(qz),
-                    float(qw),
-                ])
+                w.writerow(
+                    [
+                        ts_ns,
+                        float(tx),
+                        float(ty),
+                        float(tz),
+                        float(qx),
+                        float(qy),
+                        float(qz),
+                        float(qw),
+                    ]
+                )
 
         tmp.replace(groundtruth_csv)
 

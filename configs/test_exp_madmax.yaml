@@ -1,5 +1,5 @@
 exp_madmax_orbslam3:
-  Config: config_madmax.yaml
+  Config: test_config_madmax.yaml
   NumRuns: 1
   Parameters: {verbose: 1, mode: stereo, rgb_idx: [0,2000]}
   Module: orbslam3
