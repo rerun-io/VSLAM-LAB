@@ -3,6 +3,8 @@ import sys
 from enum import Enum
 from pathlib import Path
 
+HUGGINGFACE_TOKEN = None
+
 VSLAM_LAB_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 VSLAM_LAB_PATH = Path(os.path.dirname(VSLAM_LAB_DIR))
 
