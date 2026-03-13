@@ -11,7 +11,7 @@ kill-all = { cmd = "pkill -f -e 'droidslam|dpvo|mast3rslam|monogs|orbslam2|orbsl
 
 [environments]
 vslamlab = { features = ["vslamlab"]}
-development = { features = ["development", "vslamlab"]}
+# development = { features = ["development", "vslamlab"]}
 cuda126 = { features = ["cuda126"], solve-group = "cuda126" }
 py10 = { features = ["py10"], solve-group = "py10" }
 py11 = { features = ["py11"], solve-group = "py11" }
@@ -144,19 +144,19 @@ viser = "*"
 open3d = "*"
 gdown = "*"
 
-[feature.development.tasks]
-validate-dataset.cmd = 'python validate_dataset.py {{ dataset_name }}'
-validate-dataset.cwd = 'Utilities'
-validate-dataset.args = [
-  { "arg" = "dataset_name", "default" = "eth" },
-]
+# [feature.development.tasks]
+# validate-dataset.cmd = 'python validate_dataset.py {{ dataset_name }}'
+# validate-dataset.cwd = 'Utilities'
+# validate-dataset.args = [
+#   { "arg" = "dataset_name", "default" = "eth" },
+# ]
 
 
-[feature.development.dependencies]
-rich = "*"
-pycodestyle = "*"
-ruff = "*"
-isort = "*"
+# [feature.development.dependencies]
+# rich = "*"
+# pycodestyle = "*"
+# ruff = "*"
+# isort = "*"
 
 ########################################################################################################################
 ########################################################################################################################
