@@ -191,17 +191,17 @@ To [awesome-slam-datasets](https://github.com/youngguncho/awesome-slam-datasets)
 | [**ROVER: A Multiseason Dataset for Visual SLAM**](https://iis-esslingen.github.io/rover/)   | 📸🏞️🚗 | `rover-picam/d435i/t265` |`mono(-vi)` `rgbd` `stereo(-vi)` | `radtan5` `equid4` |
 | [**The UT Campus Object Dataset**](https://amrl.cs.utexas.edu/coda/) | 📸🏞️🤖 |  `ut-coda`  |`mono` `stereo`| `radtan5` |
 | [**Sesoko campaign**](https://www.southampton.ac.uk/smmi/news/2017/06/20-southampton-tokyo-collaboration.page) | 📸🏞️🌊 |    `sesoko`    |`mono` | `pinhole` |
-| [**Sweet Corals**](https://huggingface.co/datasets/wildflow/sweet-corals) | 📸🏞️🌊 |    `sweetcorals`    |`mono` | `pinhole` |
-| [**Ariel**](https://huggingface.co/datasets/ntnu-arl/underwater-datasets) | 📸🏞️🌊 |    `ariel`    |`mono(-vi)` `stereo(-vi)`  | `equid4` |
-| [**HILTI Challenge Dataset 2022**](https://hilti-challenge.com/dataset-2022) | 📸🏠🏞️🤳 |    `hilti2022`    |`mono(-vi)` `stereo(-vi)`  | `equid4` |
-| [**HILTI Challenge Dataset 2026**](https://github.com/Hilti-Research/hilti-trimble-slam-challenge-2026) | 📸🏠🏞️🤳 |    `hilti2026`    |`mono(-vi)` | `equid4` |
-| [**The Drunkard's Dataset**](https://davidrecasens.github.io/TheDrunkard%27sOdometry/#download-dataset)                                    |  💻🏠🤳 |   `drunkards`    | `mono` `rgbd`  | `pinhole` |
-| [**Underwater caves sonar and vision data set**](https://cirs.udg.edu/caves-dataset/)  |  📸🏞️🌊 |   `caves`  | `mono` | `pinhole` |
-| [**Hamlyn Rectified Dataset**](https://davidrecasens.github.io/EndoDepthAndMotion/) |   📸🫀🤳 |  `hamlyn`   | `mono` `rgbd` | `pinhole` |
-| [**The TUM VI Benchmark for Evaluating Visual-Inertial Odometry**](https://cvg.cit.tum.de/data/datasets/visual-inertial-dataset) |  📸🏠🤳 | `vitum` | `mono(-vi)` `stereo(-vi)` | `equid4` |
-| [**The MADMAX data set for visual-inertial rover navigation on Mars**](https://datasets.arches-projekt.de/morocco2018/) |  📸🏞️🤳 | `madmax` | `mono(-vi)` `stereo(-vi)`| `pinhole` |
-| [**ScanNet++: A High-Fidelity Dataset of 3D Indoor Scenes**](https://scannetpp.mlsg.cit.tum.de/scannetpp/) |  📸🏠🤳 | `scannetplusplus` | `mono`| `pinhole` |
-[**Monocular Visual Odometry Dataset**](https://cvg.cit.tum.de/data/datasets/mono-dataset) | 📸🏠🤳 |  `monotum`  | `mono` | `pinhole` |
+<!-- | [**Sweet Corals**](https://huggingface.co/datasets/wildflow/sweet-corals) | 📸🏞️🌊 |    `sweetcorals`    |`mono` | `pinhole` | -->
+<!-- | [**Ariel**](https://huggingface.co/datasets/ntnu-arl/underwater-datasets) | 📸🏞️🌊 |    `ariel`    |`mono(-vi)` `stereo(-vi)`  | `equid4` | -->
+<!-- | [**HILTI Challenge Dataset 2022**](https://hilti-challenge.com/dataset-2022) | 📸🏠🏞️🤳 |    `hilti2022`    |`mono(-vi)` `stereo(-vi)`  | `equid4` | -->
+<!-- | [**HILTI Challenge Dataset 2026**](https://github.com/Hilti-Research/hilti-trimble-slam-challenge-2026) | 📸🏠🏞️🤳 |    `hilti2026`    |`mono(-vi)` | `equid4` | -->
+<!-- | [**The Drunkard's Dataset**](https://davidrecasens.github.io/TheDrunkard%27sOdometry/#download-dataset)                                    |  💻🏠🤳 |   `drunkards`    | `mono` `rgbd`  | `pinhole` | -->
+<!-- | [**Underwater caves sonar and vision data set**](https://cirs.udg.edu/caves-dataset/)  |  📸🏞️🌊 |   `caves`  | `mono` | `pinhole` | -->
+<!-- | [**Hamlyn Rectified Dataset**](https://davidrecasens.github.io/EndoDepthAndMotion/) |   📸🫀🤳 |  `hamlyn`   | `mono` `rgbd` | `pinhole` | -->
+<!-- | [**The TUM VI Benchmark for Evaluating Visual-Inertial Odometry**](https://cvg.cit.tum.de/data/datasets/visual-inertial-dataset) |  📸🏠🤳 | `vitum` | `mono(-vi)` `stereo(-vi)` | `equid4` | -->
+<!-- | [**The MADMAX data set for visual-inertial rover navigation on Mars**](https://datasets.arches-projekt.de/morocco2018/) |  📸🏞️🤳 | `madmax` | `mono(-vi)` `stereo(-vi)`| `pinhole` | -->
+<!-- | [**ScanNet++: A High-Fidelity Dataset of 3D Indoor Scenes**](https://scannetpp.mlsg.cit.tum.de/scannetpp/) |  📸🏠🤳 | `scannetplusplus` | `mono`| `pinhole` | -->
+<!-- [**Monocular Visual Odometry Dataset**](https://cvg.cit.tum.de/data/datasets/mono-dataset) | 📸🏠🤳 |  `monotum`  | `mono` | `pinhole` | -->
 
 Real / Synthetic : 📸 / 💻
 
