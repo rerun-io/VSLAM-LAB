@@ -6,11 +6,12 @@ from pathlib import Path
 
 from Evaluate.evo_functions import evo_metric, evo_get_accuracy
 from path_constants import VSLAM_LAB_EVALUATION_FOLDER, TRAJECTORY_FILE_NAME, GROUNTRUTH_FILE
-from utilities import print_msg, ws, format_msg
+from utilities import print_msg, ws, format_msg, read_csv
 
 SCRIPT_LABEL = f"\033[95m[{os.path.basename(__file__)}]\033[0m "
 
 def evaluate_sequence(exp, dataset, sequence_name, overwrite=False):
+    sequence_name = str(sequence_name)
 
     # Enable evo to save trajectories in zip format
     # TODO : Remove this
@@ -28,7 +29,7 @@ def evaluate_sequence(exp, dataset, sequence_name, overwrite=False):
     accuracy_csv = evaluation_folder / f'{METRIC}.csv'
 
     # Load experiments log
-    exp_log = pd.read_csv(exp.log_csv)
+    exp_log = read_csv(exp.log_csv)
     if overwrite:
         if evaluation_folder.exists():
             shutil.rmtree(evaluation_folder)        
@@ -114,4 +115,3 @@ def evaluate_sequence(exp, dataset, sequence_name, overwrite=False):
 
     exp_log.to_csv(exp.log_csv, index=False)
     accuracy.to_csv(accuracy_csv, index=False)
-
