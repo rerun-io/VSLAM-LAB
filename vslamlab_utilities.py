@@ -287,7 +287,7 @@ def check_experiment_state(exp_yaml: str | Path) -> None:
 
         executed_num_runs_exp = 0
         if exp_folder.exists() & exp_log_csv.exists():
-            exp_log = pd.read_csv(exp_log_csv)
+            exp_log = read_csv(exp_log_csv)
             executed_num_runs_exp += (exp_log["STATUS"] == "completed").sum()  
             executed_num_runs += executed_num_runs_exp
         
@@ -441,7 +441,7 @@ def update_experiment_csv_log(exp_name: str, settings: Any) -> bool:
 
     exp_folder = VSLAMLAB_EVALUATION / exp_name
     exp_log_csv = exp_folder / "vslamlab_exp_log.csv"
-    exp_log = pd.read_csv(exp_log_csv)
+    exp_log = read_csv(exp_log_csv)
 
     baseline_name = settings.get('Module')
     all_match = exp_log["method_name"].eq(baseline_name).all()

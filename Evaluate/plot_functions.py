@@ -16,6 +16,7 @@ from sklearn.decomposition import PCA
 from path_constants import VSLAM_LAB_EVALUATION_FOLDER, VSLAMLAB_EVALUATION
 from Baselines.get_baseline import get_baseline
 from Datasets.get_dataset import get_dataset
+from utilities import read_csv
 
 import matplotlib.ticker as ticker
 from matplotlib.transforms import ScaledTranslation
@@ -815,7 +816,7 @@ def plot_table(ax, experiments, label, norm_label, sequence_nicknames, title = '
 
     all_logs = []
     for exp_name, exp in experiments.items():
-        exp_log = pd.read_csv(exp.log_csv)
+        exp_log = read_csv(exp.log_csv)
         exp_log = exp_log[
         (exp_log['STATUS'] == 'completed') &
         (exp_log['SUCCESS'] == True) &
@@ -955,7 +956,7 @@ def get_baseline_labels(experiments):
 def combine_exp_log(experiments, label, norm_label, unit_factor):
     all_logs = []
     for exp_name, exp in experiments.items():
-        exp_log = pd.read_csv(exp.log_csv)
+        exp_log = read_csv(exp.log_csv)
         exp_log = exp_log[
         (exp_log['STATUS'] == 'completed') &
         (exp_log['SUCCESS'] == True) &
@@ -988,7 +989,7 @@ def plot_table_memory_per_frame(ax, experiments, sequence_nicknames, title = '',
 
     dfs = []
     for exp_name, exp in experiments.items():
-        exp_log = pd.read_csv(exp.log_csv)
+        exp_log = read_csv(exp.log_csv)
         exp_log = exp_log[
         (exp_log['STATUS'] == 'completed') &
         (exp_log['SUCCESS'] == True) &
@@ -1121,7 +1122,7 @@ def plot_table_memory_total(ax, experiments, sequence_nicknames, title = '', uni
 
     dfs = []
     for exp_name, exp in experiments.items():
-        exp_log = pd.read_csv(exp.log_csv)
+        exp_log = read_csv(exp.log_csv)
         exp_log = exp_log[
         (exp_log['STATUS'] == 'completed') &
         (exp_log['SUCCESS'] == True) &
@@ -1449,7 +1450,6 @@ def plot_memory(figures_path, experiments, sequence_nicknames):
     ...
     
     #plot_table(experiments, 'TIME','num_frames')
-
 
 
 
