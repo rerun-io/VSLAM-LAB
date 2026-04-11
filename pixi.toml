@@ -998,106 +998,12 @@ cuda = "12.0"
 
 [feature.allfeature-dev.tasks]
 git-clone = "./git-clone.sh alejandrofontan AllFeature-VSLAM AllFeature-VSLAM-DEV"
-install = { cmd = "./build.sh", cwd = "Baselines/AllFeature-VSLAM-DEV" }
-execute-mono = { cmd = "./bin/vslamlab_allfeature_mono",  cwd = "Baselines/AllFeature-VSLAM-DEV" }
-stream = { cmd = "./bin/vslamlab_allfeature_mono_stream",  cwd = "Baselines/AllFeature-VSLAM-DEV" }
+install = { cmd = "pixi run build", cwd = "Baselines/AllFeature-VSLAM-DEV"}
+execute-mono = { cmd = "pixi run execute-mono", cwd = "Baselines/AllFeature-VSLAM-DEV" }
+stream = { cmd = "pixi run stream", cwd = "Baselines/AllFeature-VSLAM-DEV" }
 
 [feature.allfeature-dev.dependencies]
-python = "3.11.*"
-pip = "*"
-onnx = "*"
-onnxruntime = { version = "*", build = "*cuda*" }
-onnxruntime-cpp = { version = "*", build = "*cuda*" }
-
-# CUDA Build Tools
-cuda-compiler = "*"
-cuda-version = "12.6.*"
-cuda-cudart-dev = "*"
-cuda-crt = "*"
-libcusparse-dev = "*"
-cuda-driver-dev = "*"
-cuda-nvcc = "*"
-cuda-nvrtc-dev = "*"
-cuda-nvtx = "*"
-cuda-nvtx-dev = "*"
-cuda-nvml-dev = "*"
-cuda-profiler-api = "*"
-
-# CUDA Libraries
-cudnn = "*"
-libcublas-dev = "*"
-libcudss-dev = "*"
-libcufile-dev = "*"
-libcufft-dev = "*"
-libcurand-dev = "*"
-libcusolver-dev = "*"
-cusparselt = "*"
-libnvjitlink = "*"
-
-# Torch libraries
-pytorch-gpu = "*"
-torchvision = "*"
-torchcodec = "*"
-
-# Core
-pre-commit = "*"
-trimesh = "*"
-einops = "*"
-# huggingface_hub = "*"
-imageio = "*"
-numpy = "<2"
-# opencv = "*"
-xformers = "*"
-open3d = "*"
-
-# API / CLI
-fastapi = "*"
-uvicorn = "*"
-requests = "*"
-typer = "*"
-
-# Config / IO
-pillow = "*"
-omegaconf = "*"
-safetensors = "*"
-plyfile = "*"
-
-# 3D / geometry / eval / video
-evo = "*"
-e3nn = "*"
-moviepy = "*"
-pycolmap = "*"
-addict = "*"
-
-cxx-compiler = "*"
-
-tensorrt-cxx = "*"
-tensorrt-cxx-builder = "*"
-tensorrt-cxx-full = "*"
-
-compilers = "*"
-ninja = "*"
-cmake = "*"
-pkg-config = "*"
-eigen  = "*"
-yaml-cpp = "*"
-opencv = "4.12.*"
-pangolin = { channel = "fontan" }
-brisk-vslamlab = { channel = "fontan" }
-akaze-vslamlab = { channel = "fontan" }
-siftgpu-vslamlab = { channel = "fontan" }
-g2o = { channel = "fontan" }
-
-huggingface_hub = "*"
-pandas = "*"
-glew = "*"
-
-# pytorch-gpu = "*"
-git-lfs = "*"
-zlib = "*"
-
-[feature.allfeature-dev.pypi-dependencies]
-intel-openmp = "*"
+pixi = "*"
 
 # ########################################################################################################################
 # ########################################################################################################################
