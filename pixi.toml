@@ -13,6 +13,7 @@ kill-all = { cmd = "pkill -f -e 'droidslam|dpvo|mast3rslam|monogs|orbslam2|orbsl
 vslamlab = { features = ["vslamlab"]}
 # development = { features = ["development", "vslamlab"]}
 cuda126 = { features = ["cuda126"], solve-group = "cuda126" }
+cuda129 = { features = ["cuda129"], solve-group = "cuda129" }
 py10 = { features = ["py10"], solve-group = "py10" }
 py11 = { features = ["py11"], solve-group = "py11" }
 x11 = { features = ["x11"], solve-group = "x11" }
@@ -177,7 +178,7 @@ execute-stereo = 'vslamlab_droidslam_stereo'
 
 [feature.droidslam.dependencies]
 droidslam-vslamlab = "*"
-lietorch = { version = "*", channel = "fontan" }
+lietorch = { version = "*", channel = "https://prefix.dev/ai-demos" }
 setuptools = "=80.9.0"
 
 # ########################################################################################################################
@@ -196,9 +197,9 @@ execute-mono = 'vslamlab_mast3rslam_mono'
 
 [feature.mast3rslam.dependencies]
 mast3rslam-vslamlab = { channel = "fontan" }
-lietorch = { channel = "fontan" }
+lietorch = { channel = "https://prefix.dev/ai-demos" }
 moderngl-window = { channel = "fontan" }
-roma = { channel = "fontan" }
+roma = { channel = "https://prefix.dev/ai-demos" }
 
 ########################################################################################################################
 ########################################################################################################################
@@ -500,6 +501,41 @@ cusparselt = "*"
 libnvjitlink = "*"
 
 # ########################################################################################################################
+# cuda129
+[feature.cuda129]
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-64"]
+
+[feature.cuda129.system-requirements]
+cuda = "12.0"
+
+[feature.cuda129.dependencies]
+# CUDA Build Tools
+cuda-compiler = "*"
+cuda-version = "12.9.*"
+cuda-cudart-dev = "*"
+cuda-crt = "*"
+libcusparse-dev = "*"
+cuda-driver-dev = "*"
+cuda-nvcc = "*"
+cuda-nvrtc-dev = "*"
+cuda-nvtx = "*"
+cuda-nvtx-dev = "*"
+cuda-nvml-dev = "*"
+cuda-profiler-api = "*"
+
+# CUDA Libraries
+cudnn = "*"
+libcublas-dev = "*"
+libcudss-dev = "*"
+libcufile-dev = "*"
+libcufft-dev = "*"
+libcurand-dev = "*"
+libcusolver-dev = "*"
+cusparselt = "*"
+libnvjitlink = "*"
+
+# ########################################################################################################################
 # py10
 [feature.py10]
 channels = ["https://prefix.dev/conda-forge"]
@@ -586,7 +622,7 @@ cmake = "*"
 make = "*"
 
 # Specialized Libraries
-lietorch = { version = "*", channel = "fontan" }
+lietorch = { version = "*", channel = "https://prefix.dev/ai-demos" }
 
 # Core Libraries
 pytorch-gpu = "*"
@@ -634,7 +670,7 @@ make = "*"
 # Torch libraries
 pytorch-gpu = "*"
 torchvision = "*"
-lietorch = { version = "*", channel = "fontan" }
+lietorch = { version = "*", channel = "https://prefix.dev/ai-demos" }
 torchcodec = "*"
 
 # Other
@@ -659,7 +695,7 @@ pyglet = "*"
 pyglfw = "=2.9.0"
 pyglm = "*"
 pykdtree = "*"
-roma = { version = "*", channel = "fontan" }
+roma = { version = "*", channel = "https://prefix.dev/ai-demos" }
 safetensors = "*"
 scikit-learn = "*"
 scipy = "*"
