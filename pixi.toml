@@ -19,34 +19,34 @@ py11 = { features = ["py11"], solve-group = "py11" }
 x11 = { features = ["x11"], solve-group = "x11" }
 opengl = { features = ["opengl"], solve-group = "opengl" }
 
-mast3rslam = { features = ["mast3rslam", "cuda126", "py11"], solve-group = "mast3r" }
-droidslam = { features = ["droidslam", "cuda126", "py11"], solve-group = "droid" }
-dpvo = { features = ["dpvo", "cuda126", "py11"], solve-group = "droid" }
-monogs = { features = ["monogs"], solve-group = "monogs" }
+mast3rslam = { features = ["mast3rslam", "cuda129", "py11"], solve-group = "mast3r" }
+droidslam = { features = ["droidslam", "cuda129", "py11"], solve-group = "droid" }
+dpvo = { features = ["dpvo", "cuda129", "py11"], solve-group = "droid" }
+monogs = { features = ["monogs", "cuda129", "py10"], solve-group = "monogs" }
 orbslam2 = { features = ["orbslam2"], solve-group = "orb" }
 anyfeature = { features = ["anyfeature"], solve-group = "anyfeature" }
 colmap = { features = ["colmap"], solve-group = "colmap" }
 glomap = { features = ["glomap", "colmap"], solve-group = "colmap" }
 orbslam3 = { features = ["orbslam3"], solve-group = "orb" }
 okvis2 = { features = ["okvis2"], solve-group = "okvis" }
-pycuvslam = { features = ["pycuvslam","cuda126", "py10"] }
-vggt = { features = ["vggt", "cuda126", "py11"], solve-group = "vggt" }
-vggtslam = { features = ["vggtslam", "cuda126", "py11"], solve-group = "vggt" }
+pycuvslam = { features = ["pycuvslam","cuda129", "py10"] }
+vggt = { features = ["vggt", "cuda129", "py11"], solve-group = "vggt" }
+vggtslam = { features = ["vggtslam", "cuda129", "py11"], solve-group = "vggt" }
 
-mast3rslam-dev = { features = ["mast3rslam-dev", "cuda126", "py11"], solve-group = "mast3r" }
-droidslam-dev = { features = ["droidslam-dev", "cuda126", "py11"], solve-group = "droid" }
-dpvo-dev = { features = ["dpvo-dev", "cuda126", "py11", "x11", "opengl"], solve-group = "droid" }
-monogs-dev = { features = ["monogs-dev", "cuda126", "py10"], solve-group = "monogs" }
+mast3rslam-dev = { features = ["mast3rslam-dev", "cuda129", "py11"], solve-group = "mast3r" }
+droidslam-dev = { features = ["droidslam-dev", "cuda129", "py11"], solve-group = "droid" }
+dpvo-dev = { features = ["dpvo-dev", "cuda129", "py11", "x11", "opengl"], solve-group = "droid" }
+monogs-dev = { features = ["monogs-dev", "cuda129", "py10"], solve-group = "monogs" }
 orbslam2-dev = { features = ["orbslam2-dev", "x11", "opengl"], solve-group = "orb" }
 anyfeature-dev = { features = ["anyfeature-dev", "cuda126", "x11", "opengl"]}
 orbslam3-dev = { features = ["orbslam3-dev", "x11", "opengl"], solve-group = "orb" }
 okvis2-dev = { features = ["okvis2-dev", "cuda126", "py11"], solve-group = "okvis" }
-vggtslam-dev = { features = ["vggtslam-dev", "cuda126", "py11", "vggt"], solve-group = "vggt" }
+vggtslam-dev = { features = ["vggtslam-dev", "cuda129", "py11", "vggt"], solve-group = "vggt" }
 
 allfeature-dev = { features = ["allfeature-dev", "cuda126", "x11", "opengl"] }
 
-lightglue = { features = ["lightglue", "cuda126", "py11"], solve-group = "lightglue" }
-depth-anything = { features = ["depth-anything", "cuda126",  "py11"], solve-group = "depth-anything" }
+lightglue = { features = ["lightglue", "cuda129", "py11"], solve-group = "lightglue" }
+depth-anything = { features = ["depth-anything", "cuda129",  "py11"], solve-group = "depth-anything" }
 
 ros1 = { features = ["ros1"], solve-group = "ros1" }
 ros2 = { features = ["ros2"], solve-group = "ros2" }
@@ -164,7 +164,7 @@ yt-dlp = "*"
 ########################################################################################################################
 # droidslam
 [feature.droidslam]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam.system-requirements]
@@ -178,14 +178,14 @@ execute-stereo = 'vslamlab_droidslam_stereo'
 
 [feature.droidslam.dependencies]
 droidslam-vslamlab = "*"
-lietorch = { version = "*", channel = "https://prefix.dev/ai-demos" }
+lietorch = "*"
 setuptools = "=80.9.0"
 
 # ########################################################################################################################
 # ########################################################################################################################
 # mast3rslam
 [feature.mast3rslam]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam.system-requirements]
@@ -196,16 +196,16 @@ git-clone = 'git clone https://huggingface.co/vslamlab/mast3rslam-vslamlab Basel
 execute-mono = 'vslamlab_mast3rslam_mono'
 
 [feature.mast3rslam.dependencies]
-mast3rslam-vslamlab = { channel = "fontan" }
-lietorch = { channel = "https://prefix.dev/ai-demos" }
+mast3rslam-vslamlab = "*"
+lietorch = "*"
 moderngl-window = { channel = "fontan" }
-roma = { channel = "https://prefix.dev/ai-demos" }
+roma = { channel = "fontan" }
 
 ########################################################################################################################
 ########################################################################################################################
 # dpvo
 [feature.dpvo]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo.system-requirements]
@@ -216,9 +216,9 @@ git-clone = 'git clone https://huggingface.co/vslamlab/dpvo-vslamlab Baselines/D
 execute-mono = 'vslamlab_dpvo_mono'
 
 [feature.dpvo.dependencies]
-dpvo-vslamlab = { channel = "fontan" }
-pangolin = { channel = "fontan" }
-pypose = { channel = "fontan" }
+dpvo-vslamlab = "*"
+pangolin = "*"
+pypose = "*"
 opencv = "*"
 evo = "*"
 yacs = "*"
@@ -230,7 +230,7 @@ numba = "*"
 ########################################################################################################################
 # monogs
 [feature.monogs]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.monogs.system-requirements]
@@ -242,7 +242,7 @@ execute-mono = 'vslamlab_monogs_mono'
 execute-rgbd = 'vslamlab_monogs_rgbd'
 
 [feature.monogs.dependencies]
-monogs-vslamlab = { channel = "fontan" }
+monogs-vslamlab = "*"
 pytorch-gpu = "*"
 munch = "*"
 wandb = "*"
@@ -440,11 +440,11 @@ execute-mono = { cmd = 'python vslamlab_vggt.py', cwd = "Baselines/VGGT" }
 ########################################################################################################################
 # vggtslam
 [feature.vggtslam]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam.dependencies]
-vggtslam-vslamlab = { channel = "fontan" }
+vggtslam-vslamlab = "*"
 gtsam = { channel = "fontan" }
 tqdm = "*"
 viser = "*"
@@ -510,6 +510,11 @@ platforms = ["linux-64"]
 cuda = "12.0"
 
 [feature.cuda129.dependencies]
+# Force cuda129 builds of scatter packages. Old builds depend on cudatoolkit <12
+# which conflicts with cuda-version 12.9. Use pytorch_scatter (not torch-scatter)
+# as it has builds compatible with pytorch >=2.8.
+pytorch_scatter = { version = ">=2.1.2", build = "cuda129*" }
+
 # CUDA Build Tools
 cuda-compiler = "*"
 cuda-version = "12.9.*"
@@ -527,7 +532,7 @@ cuda-profiler-api = "*"
 # CUDA Libraries
 cudnn = "*"
 libcublas-dev = "*"
-libcudss-dev = "*"
+# libcudss-dev removed — its 0.7.x builds require cuda-version >=13
 libcufile-dev = "*"
 libcufft-dev = "*"
 libcurand-dev = "*"
@@ -591,7 +596,7 @@ libopengl-devel = "*"
 ########################################################################################################################
 # droidslam-dev
 [feature.droidslam-dev]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam-dev.system-requirements]
@@ -648,7 +653,7 @@ moderngl-window = "=3.1.1"
 # ########################################################################################################################
 # mast3rslam-dev
 [feature.mast3rslam-dev]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam-dev.system-requirements]
@@ -695,7 +700,7 @@ pyglet = "*"
 pyglfw = "=2.9.0"
 pyglm = "*"
 pykdtree = "*"
-roma = { version = "*", channel = "https://prefix.dev/ai-demos" }
+roma = { version = "*", channel = "fontan" }
 safetensors = "*"
 scikit-learn = "*"
 scipy = "*"
@@ -708,7 +713,7 @@ pyrealsense2 = "*"
 ########################################################################################################################
 # dpvo-dev
 [feature.dpvo-dev]
-channels = ["https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo-dev.system-requirements]
@@ -745,11 +750,11 @@ opencv = "*"
 eigen = "*"
 
 # Specialized Libraries
-pypose = { channel = "fontan" }
+pypose = "*"
 plyfile = "*"
 
 # Logging, Evaluation & Visualization
-pangolin = { channel = "fontan" }
+pangolin = "*"
 tensorboard = "*"
 evo = "*"
 numba = "*"
@@ -930,7 +935,7 @@ yaml-cpp = "*"
 # ########################################################################################################################
 # vggtslam-dev
 [feature.vggtslam-dev]
-channels = ["https://prefix.dev/conda-forge" , "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam-dev.tasks]
