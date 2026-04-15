@@ -1,0 +1,6 @@
+# Baselines that require visual-inertial data (euroc dataset)
+exp_okvis2:
+  Config: config_smoke_euroc.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, mode: mono-vi}
+  Module: okvis2

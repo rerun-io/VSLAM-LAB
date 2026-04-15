@@ -1,0 +1,12 @@
+# Baselines that require pinhole camera model (eth dataset)
+exp_vggtslam:
+  Config: config_smoke_eth.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, mode: mono}
+  Module: vggtslam
+
+exp_vggt:
+  Config: config_smoke_eth.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, mode: mono}
+  Module: vggt
