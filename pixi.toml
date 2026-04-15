@@ -632,7 +632,7 @@ lietorch = { version = "*", channel = "https://prefix.dev/ai-demos" }
 # Core Libraries
 pytorch-gpu = "*"
 opencv = "*"
-torch-scatter = "*"
+pytorch_scatter = "*"
 torchvision = "*"
 tensorboard = "*"
 
