@@ -2238,8 +2238,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-np123hbf388cc_2.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-np123hbf388cc_4.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_2.conda
       - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/noarch/pypose-0.7.3-pyh4616a5c_0.conda
   dpvo-dev:
     channels:
@@ -2681,7 +2681,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_2.conda
       - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/noarch/pypose-0.7.3-pyh4616a5c_0.conda
   droidslam:
     channels:
@@ -3135,8 +3135,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-hb0f4dca_2.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-hb0f4dca_4.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_3.conda
   droidslam-dev:
     channels:
     - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
@@ -3597,7 +3597,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_3.conda
   glomap:
     channels:
     - url: https://prefix.dev/conda-forge/
@@ -4707,8 +4707,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/yaml-0.2.5-h280c20c_3.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_2.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_3.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-hb0f4dca_4.conda
   mast3rslam-dev:
     channels:
     - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
@@ -5225,7 +5225,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_3.conda
   monogs:
     channels:
     - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
@@ -5710,7 +5710,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py310h139afa4_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-hb0f4dca_3.conda
       - pypi: https://files.pythonhosted.org/packages/6a/00/b08f23b7d7e1e14ce01419a467b583edbb93c6cdb8654e54a9cc579cd61f/addict-2.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fe/19/3ba5e1b0bcc7b91aeab6c258afd70e4907d220fed3972febe38feb40db30/configargparse-1.7.5-py3-none-any.whl
@@ -10382,7 +10382,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-hb0f4dca_2.conda
+      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-hb0f4dca_3.conda
   vggtslam-dev:
     channels:
     - url: https://prefix.dev/conda-forge/
@@ -14784,13 +14784,13 @@ packages:
   purls: []
   size: 71809
   timestamp: 1765193127016
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-np123hbf388cc_2.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-np123hbf388cc_4.conda
   subdir: linux-64
-  sha256: 4588c2cbdd0a5df52e03a87d77c391fd2f4bec11c913e24681f7bfd3235df665
-  md5: c63936021c7ca767741bb2a4e1fd60de
+  sha256: 3d137574d1e09327bf4441e87038e3668e1aec09c83331dadb5f0d92a95f914d
+  md5: 30fdecb99d03b0feb776da5831fc35a3
   depends:
   - python 3.11.*
-  - pytorch-gpu >=2.8.0,<2.9
+  - pytorch-gpu >=2.8.0
   - torchvision
   - pytorch_scatter
   - opencv
@@ -14808,15 +14808,15 @@ packages:
   - python_abi 3.11.* *_cp311
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: MIT
-  size: 1719932
-  timestamp: 1776278457954
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-hb0f4dca_2.conda
+  size: 1716051
+  timestamp: 1776287747145
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-hb0f4dca_4.conda
   subdir: linux-64
-  sha256: 6de73a0c850db0ff689b10bbd6c2ef89a382631d39750be8df5929ab9bac099b
-  md5: d54b98dfab59fce32029a57db71b3b9b
+  sha256: c2399a61b7f47a488650817b478121e5efdfc085ca8988ed096d6404bf5bd1c6
+  md5: bc829643ff54310354d8144096634a74
   depends:
   - python 3.11.*
-  - pytorch-gpu >=2.8.0,<2.9
+  - pytorch-gpu >=2.8.0
   - lietorch
   - tqdm
   - open3d
@@ -14838,8 +14838,8 @@ packages:
   - python_abi 3.11.* *_cp311
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: BSD-3-Clause
-  size: 560732
-  timestamp: 1776277752246
+  size: 695974
+  timestamp: 1776289143029
 - conda: https://prefix.dev/conda-forge/noarch/e3nn-0.6.0-pyhd8ed1ab_0.conda
   sha256: 864c4aa1c640f75e2e2d1fb6fdd755afc10ce4adc6a1d3ec9764fa0f3e242aca
   md5: df2300394ad6e87e4c9abf365589f96b
@@ -24198,20 +24198,20 @@ packages:
   license_family: Apache
   size: 168074
   timestamp: 1607309189989
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_2.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-0.3.0-hb0f4dca_3.conda
   subdir: linux-64
-  sha256: d3a0dae6b65cf387e83bb47a0cff07e74b42eaaef24652b541a87ac62767ed35
-  md5: 529f864ffefdc05f375a71c32cc576b9
+  sha256: 34f760f2fdc483f6c9eae5049c5591b9c113b5169f9d9b3583a856abb6630a7a
+  md5: 6afeac0b946a69d415d35938beefe8ad
   depends:
   - python 3.11.*
-  - pytorch-gpu >=2.8.0,<2.9
-  - libstdcxx >=15
+  - pytorch-gpu >=2.8.0
   - libgcc >=15
+  - libstdcxx >=15
   - python_abi 3.11.* *_cp311
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: BSD-3-Clause
-  size: 1429807
-  timestamp: 1776276841106
+  size: 1439699
+  timestamp: 1776286819413
 - conda: https://prefix.dev/conda-forge/noarch/lightning-utilities-0.15.3-pyhd8ed1ab_0.conda
   sha256: 97dcff433510cfb92f775f6c5da4e18d19ff70d8921187dae0725158946fb3e5
   md5: 237d294ca3acd678f590f1754e090802
@@ -24565,13 +24565,13 @@ packages:
   license_family: BSD
   size: 26100
   timestamp: 1772445154165
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-hb0f4dca_2.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-hb0f4dca_4.conda
   subdir: linux-64
-  sha256: 048d496a2217fef6d90e0eb11a8e5849a7da7ba25c41c544bed1e016b6ec062c
-  md5: 683b947c7c93c6921f8166cebbd936f8
+  sha256: 5641b16f6637bafe0a84a3dfda5a93642083b4ac63515aa9712ef6390a92429e
+  md5: b9d9fe36b52416dcfeec4bd6bba37c61
   depends:
   - python 3.11.*
-  - pytorch-gpu >=2.8.0,<2.9
+  - pytorch-gpu >=2.8.0
   - lietorch
   - einops
   - faiss
@@ -24587,14 +24587,14 @@ packages:
   - tqdm
   - trimesh
   - pandas
-  - libstdcxx >=15
   - libgcc >=15
-  - numpy >=1.26.4,<2.0a0
+  - libstdcxx >=15
   - python_abi 3.11.* *_cp311
+  - numpy >=1.26.4,<2.0a0
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: CC-BY-NC-SA-4.0
-  size: 2626897
-  timestamp: 1776278144230
+  size: 2717104
+  timestamp: 1776289456737
 - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-3.10.8-py311h38be061_0.conda
   sha256: ead3fed3b8709abaf25ac8995ff748ecbbdbfe0f097181754e542ec9dda680c9
   md5: 08b5a4eac150c688c9f924bcb3317e02
@@ -24948,13 +24948,13 @@ packages:
   license_family: MIT
   size: 365897
   timestamp: 1770923076819
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-hb0f4dca_2.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-hb0f4dca_3.conda
   subdir: linux-64
-  sha256: 8b5888ad64610beceef592f72ed3702c83d45fe7ec8adb19e46c15a567eae0cf
-  md5: 2a913f8421af0b9af888223a08cf84db
+  sha256: ad739c8b93c97b334d2b6d995d6151903929ef78968fe616470cb1223f28843e
+  md5: f27268f664a72fbee46d880f8282e958
   depends:
   - python 3.10.*
-  - pytorch-gpu >=2.8.0,<2.9
+  - pytorch-gpu >=2.8.0
   - torchvision
   - wandb
   - munch
@@ -24972,8 +24972,8 @@ packages:
   - numpy >=1.26.4,<2.0a0
   - python_abi 3.10.* *_cp310
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
-  size: 813637
-  timestamp: 1776278271989
+  size: 813567
+  timestamp: 1776287538211
 - conda: https://prefix.dev/conda-forge/noarch/moviepy-1.0.3-pyhd8ed1ab_1.tar.bz2
   sha256: 320ddb8f98e587fcf8de2b2124e691d35c039b6c976d114dac4f2a8be512bec7
   md5: 79ebbb5d759084a13dffadaa8c7b3e0d
@@ -26951,32 +26951,32 @@ packages:
   purls: []
   size: 458036
   timestamp: 1774281947855
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_2.conda
   subdir: linux-64
-  sha256: f518da67ccc300324cfa8a2f81b2c35e7bc8d95bf4375631e59505311288b8d7
-  md5: 5a275e6b522070c5913011ad8954dcdb
+  sha256: 5bb42b60dc4c084ae02046f5bcd31feee34ca05199719591a5bcd402e67a4a71
+  md5: 748582b1763ed2df13bf2e0544323033
   depends:
   - python 3.11.*
   - libstdcxx >=15
   - libgcc >=15
-  - xorg-libxext >=1.3.7,<2.0a0
-  - libegl >=1.7.0,<2.0a0
-  - libglvnd >=1.7.0,<2.0a0
-  - xorg-libxfixes >=6.0.2,<7.0a0
-  - python_abi 3.11.* *_cp311
-  - libjpeg-turbo >=3.1.4.1,<4.0a0
+  - wayland >=1.25.0,<2.0a0
+  - xorg-libxrender >=0.9.12,<0.10.0a0
   - glew >=2.3.0,<2.4.0a0
+  - xorg-libx11 >=1.8.13,<2.0a0
+  - xorg-libxfixes >=6.0.2,<7.0a0
+  - libopengl >=1.7.0,<2.0a0
+  - libegl >=1.7.0,<2.0a0
   - libgl >=1.7.0,<2.0a0
+  - libglvnd >=1.7.0,<2.0a0
+  - xorg-libxext >=1.3.7,<2.0a0
   - libpng >=1.6.57,<1.7.0a0
   - epoxy >=1.5.10,<1.6.0a0
-  - wayland >=1.25.0,<2.0a0
-  - libopengl >=1.7.0,<2.0a0
-  - xorg-libxrender >=0.9.12,<0.10.0a0
-  - xorg-libx11 >=1.8.13,<2.0a0
+  - python_abi 3.11.* *_cp311
+  - libjpeg-turbo >=3.1.4.1,<4.0a0
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: MIT
-  size: 1964729
-  timestamp: 1776271278284
+  size: 1964796
+  timestamp: 1776283570070
 - conda: https://conda.anaconda.org/fontan/linux-64/pangolin-2024.07.03-h3c9d71d_0.tar.bz2
   sha256: 0fbd56addd388c1eec2562fc9a631be236321484d564bc72fbbc8fdf5503a19b
   md5: 91745a102599859878f13344e800128b
@@ -42785,13 +42785,13 @@ packages:
   license: MIT OR Apache-2.0
   size: 582925
   timestamp: 1762472823020
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-hb0f4dca_2.conda
+- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-hb0f4dca_3.conda
   subdir: linux-64
-  sha256: f3fc98892510e1c5eced33fd467f87d17dee942fe128a6cb95842fff8f2efe10
-  md5: 799541952aef0a425656302d25592cdf
+  sha256: 9111a78feedcc0d7b2bb320dc08b1f05455903b0126551abe7598350c8ae1430
+  md5: eb402ff98847645b687856058798ae85
   depends:
   - python 3.11.*
-  - pytorch-gpu >=2.8.0,<2.9
+  - pytorch-gpu >=2.8.0
   - torchvision
   - opencv
   - evo
@@ -42801,15 +42801,15 @@ packages:
   - tqdm
   - viser
   - termcolor
-  - libstdcxx >=15
   - libgcc >=15
-  - python_abi 3.11.* *_cp311
+  - libstdcxx >=15
   - open3d >=0.19.0,<0.19.1.0a0
   - numpy >=1.26.4,<2.0a0
+  - python_abi 3.11.* *_cp311
   channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: BSD-2-Clause
-  size: 353553
-  timestamp: 1776278448794
+  size: 353578
+  timestamp: 1776287738152
 - conda: https://prefix.dev/conda-forge/noarch/virtualenv-21.2.4-pyhcf101f3_0.conda
   sha256: 9a07c52fd7fc0d187c53b527e54ea57d4f46302946fee2f9291d035f4f8984f9
   md5: 15be1b64e7a4501abb4f740c28ceadaf

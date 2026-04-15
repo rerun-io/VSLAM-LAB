@@ -8,10 +8,10 @@ HUGGINGFACE_TOKEN = None
 VSLAM_LAB_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 VSLAM_LAB_PATH = Path(os.path.dirname(VSLAM_LAB_DIR))
 
-VSLAMLAB_BENCHMARK = VSLAM_LAB_PATH / "VSLAM-LAB-Benchmark"
+VSLAMLAB_BENCHMARK = "/home/pablo/0Dev/repos/VSLAM-LAB-Benchmark"
 VSLAMLAB_EVALUATION = VSLAM_LAB_PATH / 'VSLAM-LAB-Evaluation'
 VSLAMLAB_BASELINES = VSLAM_LAB_DIR / 'Baselines'
-VSLAMLAB_VIDEOS = VSLAMLAB_BENCHMARK / 'VIDEOS'
+VSLAMLAB_VIDEOS = "/home/pablo/0Dev/repos/VSLAM-LAB-Benchmark/VIDEOS"
 
 COMPARISONS_YAML_DEFAULT = VSLAM_LAB_DIR / 'configs' / 'comp_complete.yaml'
 EXP_YAML_DEFAULT = 'exp_debug.yaml'

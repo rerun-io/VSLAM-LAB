@@ -48,4 +48,4 @@ configs/exp_demo.yaml
 app.log
 
 # ROS
-Baselines/ros2_ws
+Baselines/ros2_wsVSLAM-LAB-Benchmark

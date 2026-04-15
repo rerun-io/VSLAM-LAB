@@ -1,0 +1,35 @@
+exp_droidslam:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: rgbd}
+  Module: droidslam
+
+exp_dpvo:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: mono}
+  Module: dpvo
+
+exp_mast3rslam:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: mono}
+  Module: mast3rslam
+
+exp_monogs:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: rgbd}
+  Module: monogs
+
+exp_orbslam2:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: rgbd}
+  Module: orbslam2
+
+exp_orbslam3:
+  Config: config_smoke.yaml
+  NumRuns: 1
+  Parameters: {verbose: 0, rgb_idx: [0,100], mode: rgbd}
+  Module: orbslam3
