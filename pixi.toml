@@ -510,12 +510,8 @@ platforms = ["linux-64"]
 cuda = "12.0"
 
 [feature.cuda129.dependencies]
-# Pin PyTorch 2.8 — latest version with pytorch_scatter cuda129 builds on conda-forge.
-# PyTorch 2.10 would be ideal but pytorch_scatter hasn't been rebuilt for it yet.
-pytorch-gpu = ">=2.8.0,<2.9"
-
-# Force cuda129 builds of scatter packages to avoid cudatoolkit conflicts.
-pytorch_scatter = { version = ">=2.1.2", build = "cuda129*" }
+# PyTorch 2.10 — latest stable with native SM 12.0 (Blackwell) support
+pytorch-gpu = ">=2.10.0"
 
 # CUDA Build Tools
 cuda-compiler = "*"
