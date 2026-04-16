@@ -164,7 +164,7 @@ yt-dlp = "*"
 ########################################################################################################################
 # droidslam
 [feature.droidslam]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam.system-requirements]
@@ -185,7 +185,7 @@ setuptools = "=80.9.0"
 # ########################################################################################################################
 # mast3rslam
 [feature.mast3rslam]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam.system-requirements]
@@ -206,7 +206,7 @@ roma = { channel = "fontan" }
 ########################################################################################################################
 # dpvo
 [feature.dpvo]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo.system-requirements]
@@ -230,7 +230,7 @@ numba = "*"
 ########################################################################################################################
 # monogs
 [feature.monogs]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.monogs.system-requirements]
@@ -440,12 +440,13 @@ execute-mono = { cmd = 'python vslamlab_vggt.py', cwd = "Baselines/VGGT" }
 ########################################################################################################################
 # vggtslam
 [feature.vggtslam]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam.dependencies]
 vggtslam-vslamlab = "*"
 gtsam = "*"
+open3d = "*"
 tqdm = "*"
 viser = "*"
 termcolor = "*"
@@ -594,7 +595,7 @@ libopengl-devel = "*"
 ########################################################################################################################
 # droidslam-dev
 [feature.droidslam-dev]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam-dev.system-requirements]
@@ -650,7 +651,7 @@ moderngl-window = "=3.1.1"
 # ########################################################################################################################
 # mast3rslam-dev
 [feature.mast3rslam-dev]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam-dev.system-requirements]
@@ -710,7 +711,7 @@ pyrealsense2 = "*"
 ########################################################################################################################
 # dpvo-dev
 [feature.dpvo-dev]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo-dev.system-requirements]
@@ -930,7 +931,7 @@ yaml-cpp = "*"
 # ########################################################################################################################
 # vggtslam-dev
 [feature.vggtslam-dev]
-channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam-dev.tasks]
