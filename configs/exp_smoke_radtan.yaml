@@ -42,7 +42,7 @@ exp_anyfeature:
   Module: anyfeature
 
 exp_colmap:
-  Config: config_smoke_rgbdtum.yaml
+  Config: config_smoke_eth.yaml
   NumRuns: 1
-  Parameters: {verbose: 0, mode: mono}
+  Parameters: {verbose: 0, mode: mono, max_rgb: 120}
   Module: colmap

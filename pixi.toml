@@ -282,7 +282,7 @@ opencv = "==4.12.0"
 ########################################################################################################################
 # anyfeature
 [feature.anyfeature]
-channels = ["fontan", "https://prefix.dev/conda-forge"]
+channels = ["https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.anyfeature.tasks]
@@ -296,7 +296,7 @@ brisk = { channel = "fontan" }
 akaze = { channel = "fontan" }
 siftgpu = { channel = "fontan" }
 g2o = { channel = "fontan" }
-opencv = { channel = "fontan" }
+opencv = "4.9.*"
 
 ########################################################################################################################
 ########################################################################################################################
