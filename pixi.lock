@@ -181,7 +181,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-73.2-h59595ed_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -462,7 +462,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-75.1-he02047a_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -1215,6 +1215,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/antlr-python-runtime-4.9.3-pyhd8ed1ab_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/noarch/anyio-4.13.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/assimp-6.0.3-hecf2907_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
@@ -1305,9 +1306,10 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/evo-1.35.2-pyhc364b38_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/exceptiongroup-1.3.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/exifread-3.5.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.135.3-hbd727af_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.136.0-h49129b4_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/fastapi-cli-0.0.23-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.135.3-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.136.0-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/fastar-0.11.0-py311h89961e0_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ffmpeg-8.0.1-gpl_he74fc74_714.conda
       - conda: https://prefix.dev/conda-forge/noarch/filelock-3.28.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/flann-1.9.2-he1b7b50_6.conda
@@ -1371,7 +1373,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/httplib2-0.31.2-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/httptools-0.7.1-py311h49ec1c0_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/identify-2.6.18-pyhd8ed1ab_0.conda
@@ -1680,7 +1682,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/retrying-1.4.2-pyhe01879c_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-14.3.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-toolkit-0.19.7-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rsa-4.9.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py311haee01d2_1.conda
@@ -1790,7 +1792,6 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
   dpvo:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -1802,6 +1803,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/affine-2.4.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/alsa-lib-1.2.15.3-hb03c661_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/backports.zstd-1.3.0-py311h6b1f9c4_0.conda
@@ -1869,6 +1871,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/dav1d-1.2.1-hd590300_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/dbus-1.16.2-h24cb091_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/double-conversion-3.4.0-hecca717_0.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/dpvo-vslamlab-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/einops-0.8.2-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/epoxy-1.5.10-hb03c661_2.conda
       - conda: https://prefix.dev/conda-forge/noarch/evo-1.35.2-pyhc364b38_0.conda
@@ -2090,6 +2093,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/packaging-26.1-pyhc364b38_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pandas-3.0.2-py311h8032f78_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pango-1.56.4-hda50119_1.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/pangolin-0.9.2-h294771d_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/patsy-1.0.2-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pcre2-10.47-haa7fec5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pillow-12.2.0-py311hf88fc01_0.conda
@@ -2106,6 +2110,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/pycparser-2.22-pyh29332c3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/pygments-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/pyparsing-3.3.2-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/ai-demos/noarch/pypose-0.7.3-pyh4616a5c_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/pysocks-1.7.1-pyha55dd90_7.conda
       - conda: https://prefix.dev/conda-forge/linux-64/python-3.11.15-hd63d673_0_cpython.conda
       - conda: https://prefix.dev/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhe01879c_2.conda
@@ -2120,7 +2125,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/rdma-core-61.0-h192683f_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/requests-2.33.1-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/scipy-1.17.1-py311hbe70eeb_0.conda
@@ -2187,12 +2192,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-h0f70639_1.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/noarch/pypose-0.7.3-pyh4616a5c_1.conda
   dpvo-dev:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -2206,6 +2207,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/affine-2.4.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/alsa-lib-1.2.15.3-hb03c661_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/at-spi2-atk-2.38.0-h0630a04_3.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-64/at-spi2-core-2.40.3-h0630a04_0.tar.bz2
@@ -2520,6 +2522,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/packaging-26.1-pyhc364b38_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pandas-3.0.2-py311h8032f78_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pango-1.56.4-hda50119_1.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/pangolin-0.9.2-h294771d_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/patsy-1.0.2-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pcre2-10.47-haa7fec5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/pillow-12.2.0-py311hf88fc01_0.conda
@@ -2539,6 +2542,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/pycparser-2.22-pyh29332c3_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/pygments-2.20.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/pyparsing-3.3.2-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/ai-demos/noarch/pypose-0.7.3-pyh4616a5c_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/pysocks-1.7.1-pyha55dd90_7.conda
       - conda: https://prefix.dev/conda-forge/linux-64/python-3.11.15-hd63d673_0_cpython.conda
       - conda: https://prefix.dev/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhe01879c_2.conda
@@ -2555,7 +2559,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/requests-2.33.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rhash-1.4.6-hb9d3cd8_1.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/scipy-1.17.1-py311hbe70eeb_0.conda
@@ -2629,11 +2633,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/noarch/pypose-0.7.3-pyh4616a5c_1.conda
   droidslam:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -2716,6 +2717,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/dav1d-1.2.1-hd590300_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/dbus-1.16.2-h24cb091_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/double-conversion-3.4.0-hecca717_0.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/droidslam-vslamlab-1.0-h0f70639_3.conda
       - conda: https://prefix.dev/conda-forge/linux-64/eigen-3.4.0-h54a6638_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/eigen-abi-3.4.0.100-h3bcb7cf_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/embree-4.4.1-ha751380_0.conda
@@ -2763,7 +2765,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -2928,6 +2930,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/libxslt-1.1.43-h711ed8c_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzip-1.11.2-h6991a6a_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_2.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/lietorch-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/llvm-openmp-22.1.3-h4922eb0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/loguru-0.7.3-pyh707e725_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/lz4-c-1.10.0-h5888daf_1.conda
@@ -3080,11 +3083,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-h0f70639_3.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-1.0-h0f70639_1.conda
   droidslam-dev:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -3220,7 +3220,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -3385,6 +3385,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/libxslt-1.1.43-h711ed8c_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzip-1.11.2-h6991a6a_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_2.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/lietorch-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/llvm-openmp-22.1.3-h4922eb0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/loguru-0.7.3-pyh707e725_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/lz4-c-1.10.0-h5888daf_1.conda
@@ -3539,7 +3540,6 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-1.0-h0f70639_1.conda
   glomap:
     channels:
     - url: https://prefix.dev/conda-forge/
@@ -3948,7 +3948,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -4258,7 +4258,6 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
   mast3rslam:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -4380,7 +4379,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -4519,9 +4518,11 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/libxml2-2.15.2-he237659_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libxslt-1.1.43-h711ed8c_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_2.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/lietorch-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/llvm-openmp-22.1.3-h4922eb0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/markdown-it-py-2.2.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/markupsafe-3.0.3-py311h3778330_1.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/mast3rslam-vslamlab-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-3.10.8-py311h38be061_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-base-3.10.8-py311h0f3be63_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/mdurl-0.1.2-pyhd8ed1ab_1.conda
@@ -4647,11 +4648,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/yaml-0.2.5-h280c20c_3.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-1.0-h0f70639_1.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-h0f70639_1.conda
   mast3rslam-dev:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -4673,6 +4671,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/annotated-types-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/anyio-4.13.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aws-c-auth-0.10.1-h2d2dd48_2.conda
@@ -4759,9 +4758,10 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/evo-1.35.2-pyhc364b38_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/exceptiongroup-1.3.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/faiss-1.10.0-cuda129_mkl_py311_hd51d757_300.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.135.3-hbd727af_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.136.0-h49129b4_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/fastapi-cli-0.0.23-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.135.3-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.136.0-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/fastar-0.11.0-py311h89961e0_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ffmpeg-8.0.1-gpl_hd59e8d3_114.conda
       - conda: https://prefix.dev/conda-forge/noarch/ffmpy-0.3.0-pyhb6f538c_0.tar.bz2
       - conda: https://prefix.dev/conda-forge/noarch/filelock-3.28.0-pyhd8ed1ab_0.conda
@@ -4813,7 +4813,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/httptools-0.7.1-py311h49ec1c0_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -4967,6 +4967,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/libxml2-devel-2.15.2-he237659_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libxslt-1.1.43-h711ed8c_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_2.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/lietorch-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/linkify-it-py-2.1.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/llvm-openmp-22.1.3-h4922eb0_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/lz4-4.4.5-py311h1c460e0_1.conda
@@ -5071,7 +5072,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/rich-15.0.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-toolkit-0.19.7-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/fontan/noarch/roma-1.5.2.1-pyh4616a5c_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rpds-py-0.30.0-py311h902ca64_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py311haee01d2_1.conda
@@ -5164,10 +5165,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-1.0-h0f70639_1.conda
   monogs:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -5183,6 +5182,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/annotated-types-0.7.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/appdirs-1.4.4-pyhd8ed1ab_1.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py310h7c4b9e2_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/asttokens-3.0.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
@@ -5480,6 +5480,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/mercantile-1.2.1-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/minizip-4.0.10-h05a5f5f_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/mkl-2025.3.1-h0e700b2_10.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/monogs-vslamlab-1.0-h0f70639_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/mpc-1.4.0-he0a73b1_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/mpfr-4.2.2-he0a73b1_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/mpg123-1.32.9-hc50e24c_0.conda
@@ -5561,7 +5562,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/referencing-0.37.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/requests-2.33.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-15.0.0-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rpds-py-0.30.0-py310hd8f68c5_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py310h139afa4_1.conda
@@ -5648,7 +5649,6 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-ng-2.3.3-hceb46e0_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py310h139afa4_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-h0f70639_0.conda
       - pypi: https://files.pythonhosted.org/packages/6a/00/b08f23b7d7e1e14ce01419a467b583edbb93c6cdb8654e54a9cc579cd61f/addict-2.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fe/19/3ba5e1b0bcc7b91aeab6c258afd70e4907d220fed3972febe38feb40db30/configargparse-1.7.5-py3-none-any.whl
@@ -5663,7 +5663,6 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/93/8c/2e650f2afeb7ee576912636c23ddb621c91ac6a98e66dc8d29c3c69446e1/werkzeug-3.1.8-py3-none-any.whl
   monogs-dev:
     channels:
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://prefix.dev/conda-forge/
     - url: https://conda.anaconda.org/fontan/
@@ -5680,6 +5679,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/anyio-4.13.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/appdirs-1.4.4-pyhd8ed1ab_1.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py310h7c4b9e2_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argon2-cffi-25.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/argon2-cffi-bindings-25.1.0-py310h7c4b9e2_2.conda
@@ -6116,7 +6116,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/rfc3987-syntax-1.1.0-pyhe01879c_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rhash-1.4.6-hb9d3cd8_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-15.0.0-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/rpds-py-0.30.0-py310hd8f68c5_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py310h139afa4_1.conda
@@ -9414,7 +9414,6 @@ environments:
   vggt:
     channels:
     - url: https://prefix.dev/conda-forge/
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://conda.anaconda.org/fontan/
     options:
@@ -9496,9 +9495,10 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/email-validator-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/email_validator-2.3.0-hd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/exceptiongroup-1.3.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.135.3-hbd727af_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.136.0-h49129b4_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/fastapi-cli-0.0.23-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.135.3-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.136.0-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/fastar-0.11.0-py311h89961e0_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ffmpeg-8.0.1-gpl_hd59e8d3_114.conda
       - conda: https://prefix.dev/conda-forge/noarch/ffmpy-0.3.0-pyhb6f538c_0.tar.bz2
       - conda: https://prefix.dev/conda-forge/noarch/filelock-3.28.0-pyhd8ed1ab_0.conda
@@ -9539,7 +9539,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/httptools-0.7.1-py311h49ec1c0_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/humanfriendly-10.0-pyh707e725_8.conda
       - conda: https://prefix.dev/conda-forge/noarch/hydra-core-1.3.2-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
@@ -9833,7 +9833,6 @@ environments:
   vggtslam:
     channels:
     - url: https://prefix.dev/conda-forge/
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://conda.anaconda.org/fontan/
     options:
@@ -9850,6 +9849,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/annotated-doc-0.0.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/anyio-4.13.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/assimp-6.0.3-hecf2907_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
@@ -9973,7 +9973,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/hpack-4.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -10235,7 +10235,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/requests-2.33.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/retrying-1.4.2-pyhe01879c_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-14.3.4-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/scikit-learn-1.8.0-np2py311ha15b03d_1.conda
@@ -10276,6 +10276,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/uriparser-0.9.8-hac33072_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/urllib3-2.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/utfcpp-4.09-ha770c72_0.conda
+      - conda: https://prefix.dev/ai-demos/linux-64/vggtslam-vslamlab-1.0-h0f70639_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/viser-1.0.24-pyhcf101f3_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/viskores-1.1.0-cpu_hc82bd48_.conda
       - conda: https://prefix.dev/conda-forge/linux-64/vtk-base-9.6.0-py311h53b44c0_1.conda
@@ -10324,11 +10325,9 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/zlib-1.3.2-h25fd6f3_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstandard-0.25.0-py311haee01d2_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_6.conda
-      - conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-h0f70639_1.conda
   vggtslam-dev:
     channels:
     - url: https://prefix.dev/conda-forge/
-    - url: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/
     - url: https://prefix.dev/ai-demos/
     - url: https://conda.anaconda.org/fontan/
     options:
@@ -10413,9 +10412,10 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/email-validator-2.3.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/email_validator-2.3.0-hd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/exceptiongroup-1.3.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.135.3-hbd727af_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-0.136.0-h49129b4_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/fastapi-cli-0.0.23-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.135.3-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.136.0-pyhcf101f3_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/fastar-0.11.0-py311h89961e0_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ffmpeg-8.0.1-gpl_hd59e8d3_114.conda
       - conda: https://prefix.dev/conda-forge/noarch/ffmpy-0.3.0-pyhb6f538c_0.tar.bz2
       - conda: https://prefix.dev/conda-forge/noarch/filelock-3.28.0-pyhd8ed1ab_0.conda
@@ -10462,7 +10462,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/httptools-0.7.1-py311h49ec1c0_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/humanfriendly-10.0-pyh707e725_8.conda
       - conda: https://prefix.dev/conda-forge/noarch/hydra-core-1.3.2-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
@@ -10808,6 +10808,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/annotated-doc-0.0.4-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/anyio-4.13.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py313h07c4f96_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/assimp-6.0.3-hecf2907_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/attrs-26.1.0-pyhcf101f3_0.conda
@@ -10893,7 +10894,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httplib2-0.31.2-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/hyperframe-6.1.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/icu-78.3-h33c6efd_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/idna-3.11-pyhd8ed1ab_0.conda
@@ -11116,7 +11117,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/requests-oauthlib-2.0.0-pyhd8ed1ab_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/retrying-1.4.2-pyhe01879c_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rich-14.3.4-pyhcf101f3_0.conda
-      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/rsa-4.9.1-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/ruamel.yaml-0.19.1-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/ruamel.yaml.clib-0.2.15-py313h54dd161_1.conda
@@ -11594,6 +11595,47 @@ packages:
   license_family: APACHE
   size: 5943
   timestamp: 1774616994491
+- conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py310h7c4b9e2_0.conda
+  sha256: 2272fe3b69866d8f1a3f36fd7cbe836df73f43781e38a0901cf5eb5af1721c7a
+  md5: 3ed9b67d71332b30b1dfba2b48436159
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - libsqlite 3.53.0
+  - libsqlite >=3.53.0,<4.0a0
+  - python >=3.10,<3.11.0a0
+  - python_abi 3.10.* *_cp310
+  license: any-OSI
+  purls:
+  - pkg:pypi/apsw?source=hash-mapping
+  size: 1187963
+  timestamp: 1775938811825
+- conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py311h49ec1c0_0.conda
+  sha256: 2bbca686dfae5ab8d3543780e66e09c772e60ea536e64f7fa8a9d2238d82f90f
+  md5: ea7224557a9291f043cdc3b0efd72e47
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - libsqlite 3.53.0
+  - libsqlite >=3.53.0,<4.0a0
+  - python >=3.11,<3.12.0a0
+  - python_abi 3.11.* *_cp311
+  license: any-OSI
+  size: 1417294
+  timestamp: 1775938815918
+- conda: https://prefix.dev/conda-forge/linux-64/apsw-3.53.0.0-py313h07c4f96_0.conda
+  sha256: 7af2a2e9af143670b7ff23c1aae774622e7fea6fc3f8cf5ee02f6cae0bf53d7c
+  md5: 06adcc715f85e2a7d9e2bb79551f0d93
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - libgcc >=14
+  - libsqlite 3.53.0
+  - libsqlite >=3.53.0,<4.0a0
+  - python >=3.13,<3.14.0a0
+  - python_abi 3.13.* *_cp313
+  license: any-OSI
+  size: 1401107
+  timestamp: 1775938813270
 - conda: https://prefix.dev/conda-forge/noarch/argcomplete-3.6.3-pyhd8ed1ab_0.conda
   sha256: a2a1879c53b7a8438c898d20fa5f6274e4b1c30161f93b7818236e9df6adffde
   md5: 8f37c8fb7116a18da04e52fa9e2c8df9
@@ -14630,10 +14672,9 @@ packages:
   purls: []
   size: 71809
   timestamp: 1765193127016
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/dpvo-vslamlab-1.0-h0f70639_1.conda
-  subdir: linux-64
-  sha256: 684642465e3ff2cd0f9ba852e19c2a9bedf6a9995b5b28c3695188b89277b6f3
-  md5: 655c3ce72b5512e390f268654902573b
+- conda: https://prefix.dev/ai-demos/linux-64/dpvo-vslamlab-1.0-h0f70639_1.conda
+  sha256: 054ae8ce36ae36b0816791627098a8d5aa04ca28fa86fdd5e8f0f4b63529b966
+  md5: de7bd704f9ff5482b0824120439d8ae1
   depends:
   - torchvision
   - opencv
@@ -14643,45 +14684,43 @@ packages:
   - numba
   - pangolin
   - pypose
-  - cuda-version >=12.9,<13
+  - libstdcxx >=13
   - libgcc >=13
   - __glibc >=2.17,<3.0.a0
-  - libstdcxx >=13
-  - numpy >=1.23,<3
-  - libopengl >=1.7.0,<2.0a0
-  - python_abi 3.11.* *_cp311
-  - xorg-libxau >=1.0.12,<2.0a0
-  - xorg-libxdmcp >=1.1.5,<2.0a0
-  - libcufile >=1.14.1.1,<2.0a0
-  - cudnn >=9.10.2.21,<10.0a0
-  - xorg-libx11 >=1.8.13,<2.0a0
-  - cuda-cudart >=12.9.79,<13.0a0
-  - libgl >=1.7.0,<2.0a0
-  - xorg-libxext >=1.3.7,<2.0a0
-  - cuda-nvtx >=12.9.79,<13.0a0
-  - xorg-libxfixes >=6.0.2,<7.0a0
-  - xorg-libsm >=1.2.6,<2.0a0
-  - libcusolver >=11.7.5.82,<12.0a0
-  - libcusparse >=12.5.10.65,<13.0a0
-  - xorg-libxrender >=0.9.12,<0.10.0a0
-  - libegl >=1.7.0,<2.0a0
+  - cuda-version >=12.9,<13
   - libglvnd >=1.7.0,<2.0a0
+  - numpy >=1.23,<3
   - glew >=2.3.0,<2.4.0a0
-  - wayland >=1.25.0,<2.0a0
-  - libcublas >=12.9.1.4,<13.0a0
-  - cuda-nvrtc >=12.9.86,<13.0a0
-  - libcufft >=11.4.1.4,<12.0a0
-  - libxkbcommon >=1.13.1,<2.0a0
-  - xorg-libice >=1.1.2,<2.0a0
+  - cuda-nvtx >=12.9.79,<13.0a0
+  - xorg-libsm >=1.2.6,<2.0a0
+  - xorg-libxrender >=0.9.12,<0.10.0a0
+  - xorg-libx11 >=1.8.13,<2.0a0
+  - xorg-libxau >=1.0.12,<2.0a0
   - libcurand >=10.3.10.19,<11.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
+  - libcublas >=12.9.1.4,<13.0a0
+  - libcusparse >=12.5.10.65,<13.0a0
+  - cudnn >=9.10.2.21,<10.0a0
+  - xorg-libxfixes >=6.0.2,<7.0a0
+  - libcufft >=11.4.1.4,<12.0a0
+  - libopengl >=1.7.0,<2.0a0
+  - libxkbcommon >=1.13.1,<2.0a0
+  - cuda-cudart >=12.9.79,<13.0a0
+  - python_abi 3.11.* *_cp311
+  - libcusolver >=11.7.5.82,<12.0a0
+  - xorg-libice >=1.1.2,<2.0a0
+  - cuda-nvrtc >=12.9.86,<13.0a0
+  - libcufile >=1.14.1.1,<2.0a0
+  - libegl >=1.7.0,<2.0a0
+  - xorg-libxdmcp >=1.1.5,<2.0a0
+  - wayland >=1.25.0,<2.0a0
+  - xorg-libxext >=1.3.7,<2.0a0
+  - libgl >=1.7.0,<2.0a0
   license: MIT
-  size: 1793714
-  timestamp: 1776310224081
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/droidslam-vslamlab-1.0-h0f70639_3.conda
-  subdir: linux-64
-  sha256: 345729c32d895de3a45dc8095dec9a698d30d84023b23db03780c1e0a0415796
-  md5: ba64d2cf01068e7ad613fa5103b2bc15
+  size: 1793321
+  timestamp: 1776341270549
+- conda: https://prefix.dev/ai-demos/linux-64/droidslam-vslamlab-1.0-h0f70639_3.conda
+  sha256: b98e65244f943369c5a553ca7fd619ae8fd4da09992777454245262bb7273322
+  md5: 400690d84d335a29fafb208d6d0dfe59
   depends:
   - python 3.11.*
   - pytorch-gpu >=2.10.0
@@ -14700,25 +14739,24 @@ packages:
   - moderngl-window ==3.1.1
   - torchvision
   - tensorboard
-  - libstdcxx >=13
   - libgcc >=13
-  - __glibc >=2.17,<3.0.a0
   - cuda-version >=12.9,<13
-  - python_abi 3.11.* *_cp311
+  - __glibc >=2.17,<3.0.a0
+  - libstdcxx >=13
+  - libcufile >=1.14.1.1,<2.0a0
+  - libcusparse >=12.5.10.65,<13.0a0
   - cuda-nvrtc >=12.9.86,<13.0a0
   - cudnn >=9.10.2.21,<10.0a0
-  - libcurand >=10.3.10.19,<11.0a0
-  - cuda-cudart >=12.9.79,<13.0a0
-  - libcufile >=1.14.1.1,<2.0a0
   - cuda-nvtx >=12.9.79,<13.0a0
-  - libcusolver >=11.7.5.82,<12.0a0
-  - libcublas >=12.9.1.4,<13.0a0
+  - libcurand >=10.3.10.19,<11.0a0
   - libcufft >=11.4.1.4,<12.0a0
-  - libcusparse >=12.5.10.65,<13.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
+  - python_abi 3.11.* *_cp311
+  - libcublas >=12.9.1.4,<13.0a0
+  - cuda-cudart >=12.9.79,<13.0a0
+  - libcusolver >=11.7.5.82,<12.0a0
   license: BSD-3-Clause
-  size: 819559
-  timestamp: 1776345564347
+  size: 819027
+  timestamp: 1776369086593
 - conda: https://prefix.dev/conda-forge/noarch/e3nn-0.6.0-pyhd8ed1ab_0.conda
   sha256: 864c4aa1c640f75e2e2d1fb6fdd755afc10ce4adc6a1d3ec9764fa0f3e242aca
   md5: df2300394ad6e87e4c9abf365589f96b
@@ -14997,23 +15035,23 @@ packages:
   license_family: MIT
   size: 17730
   timestamp: 1734619232353
-- conda: https://prefix.dev/conda-forge/noarch/fastapi-0.135.3-hbd727af_0.conda
-  sha256: 076958a26a7429f0f21324f17d93f005e95e1927d2c0742a84426aa138236af4
-  md5: b19a746ffc6b4fd78a571a3229aa7997
+- conda: https://prefix.dev/conda-forge/noarch/fastapi-0.136.0-h49129b4_0.conda
+  sha256: b1e176be2ea9ce65914f97c3a7e00a4f41db5e86dfc52ce58c78ff0d50e84036
+  md5: ddd7fdd03e979d4a6da4b3ef03efb628
   depends:
-  - fastapi-core ==0.135.3 pyhcf101f3_0
+  - fastapi-core ==0.136.0 pyhcf101f3_0
   - email_validator
   - fastapi-cli
+  - fastar
   - httpx
   - jinja2
-  - pydantic-settings
   - pydantic-extra-types
+  - pydantic-settings
   - python-multipart
   - uvicorn-standard
   license: MIT
-  license_family: MIT
-  size: 4813
-  timestamp: 1775065681410
+  size: 4833
+  timestamp: 1776364451700
 - conda: https://prefix.dev/conda-forge/noarch/fastapi-cli-0.0.23-pyhcf101f3_0.conda
   sha256: cb60fc8c96dcd2a6335914d4d6d7d5f5549c9e1ff4533be28ba699e648babf37
   md5: 442ec6511754418c87a84bc1dc0c5384
@@ -15028,9 +15066,9 @@ packages:
   license_family: MIT
   size: 18920
   timestamp: 1771293215825
-- conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.135.3-pyhcf101f3_0.conda
-  sha256: a3d8d44e7b6519eac6b57faaf1c872f8865b125cf6ecb50d2d09467c558294c5
-  md5: 1ed2eb0553d0b601604e20af3db2d9f9
+- conda: https://prefix.dev/conda-forge/noarch/fastapi-core-0.136.0-pyhcf101f3_0.conda
+  sha256: c7e4e3e0a5eae4f27893449c585e5b5124a335409e329f98c3809481a01450dc
+  md5: c2c6edf318cb6c1485df5cd55837047a
   depends:
   - python >=3.10
   - annotated-doc >=0.0.2
@@ -15042,6 +15080,7 @@ packages:
   constrains:
   - email_validator >=2.0.0
   - fastapi-cli >=0.0.8
+  - fastar >=0.9.0
   - httpx >=0.23.0,<1.0.0
   - jinja2 >=3.1.5
   - pydantic-extra-types >=2.0.0
@@ -15049,9 +15088,23 @@ packages:
   - python-multipart >=0.0.18
   - uvicorn-standard >=0.12.0
   license: MIT
+  size: 95748
+  timestamp: 1776364451700
+- conda: https://prefix.dev/conda-forge/linux-64/fastar-0.11.0-py311h89961e0_0.conda
+  sha256: d82a987c4fa74e5e5e0566bd14258a70feb096302ee493e2ea4cc4ef37556862
+  md5: 65b1c651d9735dbab599f0ec903c6787
+  depends:
+  - python
+  - libgcc >=14
+  - __glibc >=2.17,<3.0.a0
+  - python_abi 3.11.* *_cp311
+  - zstd >=1.5.7,<1.6.0a0
+  constrains:
+  - __glibc >=2.17
+  license: MIT
   license_family: MIT
-  size: 95900
-  timestamp: 1775065681410
+  size: 426379
+  timestamp: 1776177829215
 - conda: https://prefix.dev/conda-forge/linux-64/ffmpeg-6.1.1-gpl_he44c6f3_112.conda
   sha256: a4cfb76c9a1e58f755869e0cc33707a5e3473f0c8d0d49ddaa10e84e87909486
   md5: 51a49318bcd4e848e867a5b9ea5b6545
@@ -17257,9 +17310,9 @@ packages:
   - pkg:pypi/httpx?source=hash-mapping
   size: 63082
   timestamp: 1733663449209
-- conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.10.2-pyhd8ed1ab_0.conda
-  sha256: fdc6d7917cba3bec4b152a86f6119f12f9cea04ccde56f6a48a43e7732fab83c
-  md5: 25aa5a80046fd0c48ebb0aa99d522e4f
+- conda: https://prefix.dev/conda-forge/noarch/huggingface_hub-1.11.0-pyhd8ed1ab_0.conda
+  sha256: 088b6def0d01238f27990e7f83597ba20f340017c4fd4b1ac5254d2b147de06d
+  md5: eff1cbac17d1b895399429718e53e3b7
   depends:
   - filelock >=3.10.0
   - fsspec >=2023.5.0
@@ -17274,9 +17327,8 @@ packages:
   - typing-extensions >=3.7.4.3
   - typing_extensions >=4.1.0
   license: Apache-2.0
-  license_family: APACHE
-  size: 404547
-  timestamp: 1776171034201
+  size: 406542
+  timestamp: 1776367093817
 - conda: https://prefix.dev/conda-forge/noarch/humanfriendly-10.0-pyh707e725_8.conda
   sha256: fa2071da7fab758c669e78227e6094f6b3608228740808a6de5d6bce83d9e52d
   md5: 7fe569c10905402ed47024fc481bb371
@@ -18043,7 +18095,7 @@ packages:
   license: BSD-3-Clause
   license_family: BSD
   purls:
-  - pkg:pypi/jupyterlab?source=compressed-mapping
+  - pkg:pypi/jupyterlab?source=hash-mapping
   size: 8245973
   timestamp: 1773240966438
 - conda: https://prefix.dev/conda-forge/noarch/jupyterlab_pygments-0.3.0-pyhd8ed1ab_2.conda
@@ -23845,34 +23897,32 @@ packages:
   license_family: Apache
   size: 168074
   timestamp: 1607309189989
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/lietorch-1.0-h0f70639_1.conda
-  subdir: linux-64
-  sha256: fed5133d32c8c840e7604667f0f3f07719080b65fa6bcc7fbc2e5842d834430e
-  md5: fcf99fd18de5863edcc6ea0de1bdcd82
+- conda: https://prefix.dev/ai-demos/linux-64/lietorch-1.0-h0f70639_1.conda
+  sha256: 58cc69629508b931aa53b7eaff722ca27057aa24c44d95af5690ea0d05066018
+  md5: 9bb6a03e93fc5352f1b482f81b9527be
   depends:
   - python 3.11.*
   - pytorch-gpu >=2.10.0
   - scipy
   - pyyaml
-  - __glibc >=2.17,<3.0.a0
-  - cuda-version >=12.9,<13
   - libstdcxx >=13
   - libgcc >=13
+  - cuda-version >=12.9,<13
+  - __glibc >=2.17,<3.0.a0
+  - libcusparse >=12.5.10.65,<13.0a0
   - libcufile >=1.14.1.1,<2.0a0
-  - libcurand >=10.3.10.19,<11.0a0
+  - libcusolver >=11.7.5.82,<12.0a0
   - libcublas >=12.9.1.4,<13.0a0
   - cuda-cudart >=12.9.79,<13.0a0
-  - python_abi 3.11.* *_cp311
-  - libcufft >=11.4.1.4,<12.0a0
-  - libcusolver >=11.7.5.82,<12.0a0
   - cudnn >=9.10.2.21,<10.0a0
+  - python_abi 3.11.* *_cp311
   - cuda-nvtx >=12.9.79,<13.0a0
-  - libcusparse >=12.5.10.65,<13.0a0
   - cuda-nvrtc >=12.9.86,<13.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
+  - libcufft >=11.4.1.4,<12.0a0
+  - libcurand >=10.3.10.19,<11.0a0
   license: BSD-3-Clause
-  size: 3057790
-  timestamp: 1776346857055
+  size: 3056377
+  timestamp: 1776367612094
 - conda: https://prefix.dev/conda-forge/noarch/lightning-utilities-0.15.3-pyhd8ed1ab_0.conda
   sha256: 97dcff433510cfb92f775f6c5da4e18d19ff70d8921187dae0725158946fb3e5
   md5: 237d294ca3acd678f590f1754e090802
@@ -24227,10 +24277,9 @@ packages:
   license_family: BSD
   size: 27424
   timestamp: 1772445227915
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/mast3rslam-vslamlab-1.0-h0f70639_1.conda
-  subdir: linux-64
-  sha256: ff99ac70e66d8c3baef1cfa7699cae9c8c88953d86717c52a72c1dcab571444b
-  md5: 521ed75e3adb8bb8e2136e40f4ef2ae0
+- conda: https://prefix.dev/ai-demos/linux-64/mast3rslam-vslamlab-1.0-h0f70639_1.conda
+  sha256: 5593048ba9ee4f2d3b7770d91acb777feda90a5f7fdeb24fca3cb806c7d249e9
+  md5: 5dc10f6a8cf74a369dc57614670aa448
   depends:
   - einops
   - faiss
@@ -24251,36 +24300,35 @@ packages:
   - __glibc >=2.17,<3.0.a0
   - cuda-version >=12.9,<13
   - libstdcxx >=13
-  - librealsense >=2.56.5,<2.57.0a0
+  - cuda-nvrtc >=12.9.86,<13.0a0
+  - xorg-libice >=1.1.2,<2.0a0
   - xorg-libxrender >=0.9.12,<0.10.0a0
-  - libcufile >=1.14.1.1,<2.0a0
-  - libgl >=1.7.0,<2.0a0
+  - python_abi 3.11.* *_cp311
+  - libopengl >=1.7.0,<2.0a0
   - xorg-libxfixes >=6.0.2,<7.0a0
   - numpy >=1.26.4,<2.0a0
-  - python_abi 3.11.* *_cp311
-  - cuda-cudart >=12.9.79,<13.0a0
-  - libcufft >=11.4.1.4,<12.0a0
-  - libcusolver >=11.7.5.82,<12.0a0
-  - libxkbcommon >=1.13.1,<2.0a0
   - xorg-libsm >=1.2.6,<2.0a0
-  - xorg-libx11 >=1.8.13,<2.0a0
-  - libcusparse >=12.5.10.65,<13.0a0
   - xorg-libxext >=1.3.7,<2.0a0
-  - libopengl >=1.7.0,<2.0a0
-  - xorg-libxdmcp >=1.1.5,<2.0a0
-  - cudnn >=9.10.2.21,<10.0a0
-  - xorg-libxau >=1.0.12,<2.0a0
   - libcublas >=12.9.1.4,<13.0a0
-  - xorg-libice >=1.1.2,<2.0a0
-  - libegl >=1.7.0,<2.0a0
-  - cuda-nvrtc >=12.9.86,<13.0a0
-  - libcurand >=10.3.10.19,<11.0a0
-  - libglvnd >=1.7.0,<2.0a0
   - cuda-nvtx >=12.9.79,<13.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
+  - xorg-libx11 >=1.8.13,<2.0a0
+  - libcusolver >=11.7.5.82,<12.0a0
+  - libgl >=1.7.0,<2.0a0
+  - cuda-cudart >=12.9.79,<13.0a0
+  - xorg-libxau >=1.0.12,<2.0a0
+  - libxkbcommon >=1.13.1,<2.0a0
+  - libcurand >=10.3.10.19,<11.0a0
+  - librealsense >=2.56.5,<2.57.0a0
+  - libglvnd >=1.7.0,<2.0a0
+  - cudnn >=9.10.2.21,<10.0a0
+  - libcufft >=11.4.1.4,<12.0a0
+  - libegl >=1.7.0,<2.0a0
+  - libcufile >=1.14.1.1,<2.0a0
+  - xorg-libxdmcp >=1.1.5,<2.0a0
+  - libcusparse >=12.5.10.65,<13.0a0
   license: CC-BY-NC-SA-4.0
-  size: 2818724
-  timestamp: 1776345565344
+  size: 2818401
+  timestamp: 1776369693118
 - conda: https://prefix.dev/conda-forge/linux-64/matplotlib-3.10.8-py311h38be061_0.conda
   sha256: ead3fed3b8709abaf25ac8995ff748ecbbdbfe0f097181754e542ec9dda680c9
   md5: 08b5a4eac150c688c9f924bcb3317e02
@@ -24634,10 +24682,9 @@ packages:
   license_family: MIT
   size: 365897
   timestamp: 1770923076819
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/monogs-vslamlab-1.0-h0f70639_0.conda
-  subdir: linux-64
-  sha256: 93b83fe60190db68c967eac59127b223042a315fc6817b44a5bbe27be80e02a5
-  md5: e6f5f6b322a7aa9b922310d03eea3f60
+- conda: https://prefix.dev/ai-demos/linux-64/monogs-vslamlab-1.0-h0f70639_0.conda
+  sha256: fbacbd580edcfc2924d7fcaafe37a36adddd8c6f80db1480e9c08520a0f4c1b8
+  md5: f1dc91431c623ff1290d7090ab1184b5
   depends:
   - python 3.10.*
   - pytorch-gpu >=2.10.0
@@ -24653,26 +24700,25 @@ packages:
   - rich
   - evo
   - torchmetrics
-  - cuda-version >=12.9,<13
-  - libstdcxx >=13
   - libgcc >=13
   - __glibc >=2.17,<3.0.a0
-  - libcusolver >=11.7.5.82,<12.0a0
-  - libcurand >=10.3.10.19,<11.0a0
-  - libcufft >=11.4.1.4,<12.0a0
-  - cuda-nvrtc >=12.9.86,<13.0a0
-  - cudnn >=9.10.2.21,<10.0a0
-  - cuda-cudart >=12.9.79,<13.0a0
-  - numpy >=1.26.4,<2.0a0
+  - cuda-version >=12.9,<13
+  - libstdcxx >=13
   - cuda-nvtx >=12.9.79,<13.0a0
   - libcublas >=12.9.1.4,<13.0a0
-  - python_abi 3.10.* *_cp310
-  - libcusparse >=12.5.10.65,<13.0a0
   - glfw >=3.4,<4.0a0
+  - libcusolver >=11.7.5.82,<12.0a0
+  - numpy >=1.26.4,<2.0a0
+  - cudnn >=9.10.2.21,<10.0a0
+  - libcufft >=11.4.1.4,<12.0a0
+  - libcusparse >=12.5.10.65,<13.0a0
   - libcufile >=1.14.1.1,<2.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
-  size: 1034362
-  timestamp: 1776307880692
+  - libcurand >=10.3.10.19,<11.0a0
+  - python_abi 3.10.* *_cp310
+  - cuda-nvrtc >=12.9.86,<13.0a0
+  - cuda-cudart >=12.9.79,<13.0a0
+  size: 1016670
+  timestamp: 1776337797765
 - conda: https://prefix.dev/conda-forge/noarch/moviepy-1.0.3-pyhd8ed1ab_1.tar.bz2
   sha256: 320ddb8f98e587fcf8de2b2124e691d35c039b6c976d114dac4f2a8be512bec7
   md5: 79ebbb5d759084a13dffadaa8c7b3e0d
@@ -26671,32 +26717,6 @@ packages:
   purls: []
   size: 458036
   timestamp: 1774281947855
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/pangolin-0.9.2-hb0f4dca_0.conda
-  subdir: linux-64
-  sha256: 2d6d8b15c5383e34132088113388af9a9e33a8bb6c195fd3ac14b1af00206723
-  md5: 81d18ff9dc520a2dcbffe19b99c65085
-  depends:
-  - python 3.11.*
-  - libgcc >=15
-  - libstdcxx >=15
-  - wayland >=1.25.0,<2.0a0
-  - xorg-libxrender >=0.9.12,<0.10.0a0
-  - xorg-libx11 >=1.8.13,<2.0a0
-  - libopengl >=1.7.0,<2.0a0
-  - epoxy >=1.5.10,<1.6.0a0
-  - libjpeg-turbo >=3.1.4.1,<4.0a0
-  - glew >=2.3.0,<2.4.0a0
-  - libglvnd >=1.7.0,<2.0a0
-  - xorg-libxfixes >=6.0.2,<7.0a0
-  - libpng >=1.6.57,<1.7.0a0
-  - xorg-libxext >=1.3.7,<2.0a0
-  - python_abi 3.11.* *_cp311
-  - libegl >=1.7.0,<2.0a0
-  - libgl >=1.7.0,<2.0a0
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
-  license: MIT
-  size: 1964847
-  timestamp: 1776306637451
 - conda: https://conda.anaconda.org/fontan/linux-64/pangolin-2024.07.03-h3c9d71d_0.tar.bz2
   sha256: 0fbd56addd388c1eec2562fc9a631be236321484d564bc72fbbc8fdf5503a19b
   md5: 91745a102599859878f13344e800128b
@@ -26711,6 +26731,30 @@ packages:
   license: MIT
   size: 2246579
   timestamp: 1720419902914
+- conda: https://prefix.dev/ai-demos/linux-64/pangolin-0.9.2-h294771d_0.conda
+  sha256: 4d9d43fede5f0b361e97fe922368e496a377c8d3a785495904dcbb669406f763
+  md5: c69c584bd1d7c46b1b6d62f4bbfea7b2
+  depends:
+  - python 3.11.*
+  - libstdcxx >=13
+  - libgcc >=13
+  - python_abi 3.11.* *_cp311
+  - libjpeg-turbo >=3.1.4.1,<4.0a0
+  - libopengl >=1.7.0,<2.0a0
+  - xorg-libxrender >=0.9.12,<0.10.0a0
+  - libegl >=1.7.0,<2.0a0
+  - wayland >=1.25.0,<2.0a0
+  - xorg-libxext >=1.3.7,<2.0a0
+  - libgl >=1.7.0,<2.0a0
+  - epoxy >=1.5.10,<1.6.0a0
+  - xorg-libxfixes >=6.0.2,<7.0a0
+  - xorg-libx11 >=1.8.13,<2.0a0
+  - libglvnd >=1.7.0,<2.0a0
+  - glew >=2.3.0,<2.4.0a0
+  - libpng >=1.6.58,<1.7.0a0
+  license: MIT
+  size: 1298766
+  timestamp: 1776366507057
 - conda: https://prefix.dev/conda-forge/noarch/paramiko-4.0.0-pyhd8ed1ab_0.conda
   sha256: ce76d5a1fc6c7ef636cbdbf14ce2d601a1bfa0dd8d286507c1fd02546fccb94b
   md5: 1a884d2b1ea21abfb73911dcdb8342e4
@@ -28416,17 +28460,15 @@ packages:
   license_family: BSD
   size: 197511
   timestamp: 1767294348706
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/noarch/pypose-0.7.3-pyh4616a5c_1.conda
-  subdir: noarch
-  sha256: 435b5301cb7712f436c7f2539b49da3c9d59e1bde550df451c5fe328c48afcca
-  md5: 7963a42136641001b41e5a0eb41a22ec
+- conda: https://prefix.dev/ai-demos/noarch/pypose-0.7.3-pyh4616a5c_1.conda
+  sha256: 4a69e0ef281cdcf0802efd06627212e1118f13aa2f8993248eb60a1f22d15d29
+  md5: a5717d8004c9f15259a44c4dec7b0abf
   depends:
   - python >=3.6
   - python
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
   license: MIT
-  size: 117871
-  timestamp: 1776306663838
+  size: 117833
+  timestamp: 1776321540445
 - conda: https://prefix.dev/conda-forge/linux-64/pyppmd-1.3.1-py311h1ddb823_1.conda
   sha256: de620ca85b90c80c48123008468fc319b5f60ea776c4a9eba5d4e94e06184d5c
   md5: 8fcc9ab7376fe168ff5a9850d6684162
@@ -40281,10 +40323,11 @@ packages:
   license: BSD-3-Clause
   size: 2377
   timestamp: 1773552444509
-- conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.0-pyhd8ed1ab_0.conda
-  sha256: 0729c69d137c64c6f9f7daf574f349544dd2a16dea7d78af1e89b34087e8673b
-  md5: f56f19052a5f3cf8a86288c942479189
+- conda: https://prefix.dev/conda-forge/noarch/rosbags-0.11.1-pyhd8ed1ab_0.conda
+  sha256: dc70a4614617d91674f040dd82f945554f793d88588f39b7f08f048f1896474c
+  md5: 94018a60abaaa680d75a311179f964fa
   depends:
+  - apsw
   - lz4
   - numpy
   - python >=3.10
@@ -40292,11 +40335,10 @@ packages:
   - typing-extensions
   - zstandard
   license: Apache-2.0
-  license_family: APACHE
   purls:
   - pkg:pypi/rosbags?source=hash-mapping
-  size: 84151
-  timestamp: 1760554310677
+  size: 85842
+  timestamp: 1776352254761
 - conda: https://prefix.dev/conda-forge/noarch/rosdep-0.26.0-pyhd8ed1ab_1.conda
   sha256: 73eebdcdebc4f78053dcfcd7366a3a07ad7e6c259125c1f22e411816a1fff89f
   md5: 75e3cb8cf6a5a8283ae55b5a2209c746
@@ -42328,10 +42370,9 @@ packages:
   license: MIT OR Apache-2.0
   size: 582925
   timestamp: 1762472823020
-- conda: /var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output/linux-64/vggtslam-vslamlab-1.0-h0f70639_1.conda
-  subdir: linux-64
-  sha256: 5314075db0df70d55af0af2560d32a5ff0317e5c00b8e49989e0943360ce37ed
-  md5: 443be7bbcdf273525e92b90593a5a3f9
+- conda: https://prefix.dev/ai-demos/linux-64/vggtslam-vslamlab-1.0-h0f70639_1.conda
+  sha256: 527ea4e3d36d7be5af3d41ce760e5295f442579a96809114644e4e204e168d78
+  md5: 71843152805acc70d5ebe3e8d458e8f7
   depends:
   - torchvision
   - opencv
@@ -42344,24 +42385,23 @@ packages:
   - termcolor
   - libgcc >=13
   - cuda-version >=12.9,<13
-  - libstdcxx >=13
   - __glibc >=2.17,<3.0.a0
-  - libcufft >=11.4.1.4,<12.0a0
-  - libcusolver >=11.7.5.82,<12.0a0
-  - cuda-nvtx >=12.9.79,<13.0a0
-  - cuda-nvrtc >=12.9.86,<13.0a0
-  - python_abi 3.11.* *_cp311
-  - cudnn >=9.10.2.21,<10.0a0
-  - libcurand >=10.3.10.19,<11.0a0
-  - libcusparse >=12.5.10.65,<13.0a0
-  - libcufile >=1.14.1.1,<2.0a0
-  - libcublas >=12.9.1.4,<13.0a0
+  - libstdcxx >=13
   - cuda-cudart >=12.9.79,<13.0a0
+  - python_abi 3.11.* *_cp311
+  - libcublas >=12.9.1.4,<13.0a0
+  - cuda-nvtx >=12.9.79,<13.0a0
   - numpy >=1.23,<3
-  channel: file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output
+  - libcusparse >=12.5.10.65,<13.0a0
+  - libcurand >=10.3.10.19,<11.0a0
+  - libcusolver >=11.7.5.82,<12.0a0
+  - cuda-nvrtc >=12.9.86,<13.0a0
+  - libcufft >=11.4.1.4,<12.0a0
+  - cudnn >=9.10.2.21,<10.0a0
+  - libcufile >=1.14.1.1,<2.0a0
   license: BSD-2-Clause
-  size: 308319
-  timestamp: 1776310226482
+  size: 308352
+  timestamp: 1776324438512
 - conda: https://prefix.dev/conda-forge/noarch/virtualenv-21.2.4-pyhcf101f3_0.conda
   sha256: 9a07c52fd7fc0d187c53b527e54ea57d4f46302946fee2f9291d035f4f8984f9
   md5: 15be1b64e7a4501abb4f740c28ceadaf
