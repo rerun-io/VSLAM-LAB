@@ -177,8 +177,8 @@ execute-rgbd = 'vslamlab_droidslam_rgbd'
 execute-stereo = 'vslamlab_droidslam_stereo'
 
 [feature.droidslam.dependencies]
-droidslam-vslamlab = "*"
-lietorch = "*"
+droidslam-vslamlab = { channel = "https://prefix.dev/ai-demos" }
+lietorch = { channel = "https://prefix.dev/ai-demos" }
 setuptools = "=80.9.0"
 
 # ########################################################################################################################
@@ -196,9 +196,9 @@ git-clone = 'git clone https://huggingface.co/vslamlab/mast3rslam-vslamlab Basel
 execute-mono = 'vslamlab_mast3rslam_mono'
 
 [feature.mast3rslam.dependencies]
-mast3rslam-vslamlab = "*"
-lietorch = "*"
-setuptools = "<81"
+mast3rslam-vslamlab = { channel = "https://prefix.dev/ai-demos" }
+lietorch = { channel = "https://prefix.dev/ai-demos" }
+setuptools = "<81"  # pkg_resources removed in setuptools >= 82
 moderngl-window = { channel = "fontan" }
 roma = { channel = "fontan" }
 
@@ -217,9 +217,9 @@ git-clone = 'git clone https://huggingface.co/vslamlab/dpvo-vslamlab Baselines/D
 execute-mono = 'vslamlab_dpvo_mono'
 
 [feature.dpvo.dependencies]
-dpvo-vslamlab = "*"
-pangolin = "*"
-pypose = "*"
+dpvo-vslamlab = { channel = "https://prefix.dev/ai-demos" }
+pangolin = { channel = "https://prefix.dev/ai-demos" }
+pypose = { channel = "https://prefix.dev/ai-demos" }
 opencv = "*"
 evo = "*"
 yacs = "*"
@@ -242,7 +242,7 @@ execute-mono = 'vslamlab_monogs_mono'
 execute-rgbd = 'vslamlab_monogs_rgbd'
 
 [feature.monogs.dependencies]
-monogs-vslamlab = "*"
+monogs-vslamlab = { channel = "https://prefix.dev/ai-demos" }
 pytorch-gpu = "*"
 munch = "*"
 wandb = "*"
@@ -444,9 +444,9 @@ channels = ["https://prefix.dev/ai-demos", "https://prefix.dev/conda-forge", "fo
 platforms = ["linux-64"]
 
 [feature.vggtslam.dependencies]
-vggtslam-vslamlab = "*"
-gtsam = "*"
-open3d = "*"
+vggtslam-vslamlab = { channel = "https://prefix.dev/ai-demos" }
+gtsam = { channel = "fontan" }
+# open3d — temporarily removed (libboost/fmt conflict with pytorch 2.10)
 tqdm = "*"
 viser = "*"
 termcolor = "*"
@@ -626,7 +626,7 @@ cmake = "*"
 make = "*"
 
 # Specialized Libraries
-lietorch = "*"
+lietorch = { channel = "https://prefix.dev/ai-demos" }
 
 # Core Libraries
 pytorch-gpu = "*"
@@ -673,7 +673,7 @@ make = "*"
 # Torch libraries
 pytorch-gpu = "*"
 torchvision = "*"
-lietorch = "*"
+lietorch = { channel = "https://prefix.dev/ai-demos" }
 torchcodec = "*"
 
 # Other
@@ -747,11 +747,11 @@ opencv = "*"
 eigen = "*"
 
 # Specialized Libraries
-pypose = "*"
+pypose = { channel = "https://prefix.dev/ai-demos" }
 plyfile = "*"
 
 # Logging, Evaluation & Visualization
-pangolin = "*"
+pangolin = { channel = "https://prefix.dev/ai-demos" }
 tensorboard = "*"
 evo = "*"
 numba = "*"
@@ -973,7 +973,7 @@ pytorch-lightning = "*"
 termcolor = "*"
 virtualenv = ">=20.10.0"
 lz4 = "*"
-gtsam = "*"
+gtsam = { channel = "fontan" }
 nodeenv = "*"
 
 # ########################################################################################################################
