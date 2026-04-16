@@ -164,7 +164,7 @@ yt-dlp = "*"
 ########################################################################################################################
 # droidslam
 [feature.droidslam]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam.system-requirements]
@@ -185,7 +185,7 @@ setuptools = "=80.9.0"
 # ########################################################################################################################
 # mast3rslam
 [feature.mast3rslam]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam.system-requirements]
@@ -198,6 +198,7 @@ execute-mono = 'vslamlab_mast3rslam_mono'
 [feature.mast3rslam.dependencies]
 mast3rslam-vslamlab = "*"
 lietorch = "*"
+setuptools = "<81"
 moderngl-window = { channel = "fontan" }
 roma = { channel = "fontan" }
 
@@ -205,7 +206,7 @@ roma = { channel = "fontan" }
 ########################################################################################################################
 # dpvo
 [feature.dpvo]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo.system-requirements]
@@ -222,7 +223,6 @@ pypose = "*"
 opencv = "*"
 evo = "*"
 yacs = "*"
-pytorch_scatter = "*"
 einops = "*"
 numba = "*"
 
@@ -230,7 +230,7 @@ numba = "*"
 ########################################################################################################################
 # monogs
 [feature.monogs]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.monogs.system-requirements]
@@ -440,12 +440,12 @@ execute-mono = { cmd = 'python vslamlab_vggt.py', cwd = "Baselines/VGGT" }
 ########################################################################################################################
 # vggtslam
 [feature.vggtslam]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam.dependencies]
 vggtslam-vslamlab = "*"
-gtsam = { channel = "fontan" }
+gtsam = "*"
 tqdm = "*"
 viser = "*"
 termcolor = "*"
@@ -594,7 +594,7 @@ libopengl-devel = "*"
 ########################################################################################################################
 # droidslam-dev
 [feature.droidslam-dev]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.droidslam-dev.system-requirements]
@@ -630,7 +630,6 @@ lietorch = "*"
 # Core Libraries
 pytorch-gpu = "*"
 opencv = "*"
-pytorch_scatter = "*"
 torchvision = "*"
 tensorboard = "*"
 
@@ -651,7 +650,7 @@ moderngl-window = "=3.1.1"
 # ########################################################################################################################
 # mast3rslam-dev
 [feature.mast3rslam-dev]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.mast3rslam-dev.system-requirements]
@@ -711,7 +710,7 @@ pyrealsense2 = "*"
 ########################################################################################################################
 # dpvo-dev
 [feature.dpvo-dev]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.dpvo-dev.system-requirements]
@@ -738,7 +737,6 @@ wayland = "*"
 # Torch libraries
 pytorch-gpu = "*"
 torchvision = "*"
-pytorch_scatter = "*"
 
 # Core Libraries
 numpy = "*"
@@ -785,7 +783,6 @@ make = "*"
 # Core Libraries
 pytorch-gpu = "*"
 torchvision = "*"
-pytorch_scatter = "*"
 numpy = "<2"
 opencv = "*"
 
@@ -933,7 +930,7 @@ yaml-cpp = "*"
 # ########################################################################################################################
 # vggtslam-dev
 [feature.vggtslam-dev]
-channels = ["file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
+channels = ["https://prefix.dev/ai-demos", "file:///var/tmp/vibe-kanban/worktrees/5c8c-vslamlab-cuda-12/ai-demos/output", "https://prefix.dev/conda-forge", "fontan"]
 platforms = ["linux-64"]
 
 [feature.vggtslam-dev.tasks]
@@ -947,7 +944,7 @@ compilers = "*"
 cmake = "*"
 make = "*"
 
-boost = "*"
+libboost-devel = "*"  # C++ headers only; 'boost' metapackage lacks py311 linux-64 builds
 unzip = "*"
 
 # Core Libraries
@@ -969,13 +966,13 @@ trimesh = "*"
 matplotlib = "*"
 gradio = "==6.2.0"
 viser = "*"
-open3d = "*"
+# open3d temporarily removed — libboost/fmt conflict with pytorch 2.10 + gtsam
 pytorch-metric-learning = "*"
 pytorch-lightning = "*"
 termcolor = "*"
 virtualenv = ">=20.10.0"
 lz4 = "*"
-gtsam = { channel = "fontan" }
+gtsam = "*"
 nodeenv = "*"
 
 # ########################################################################################################################
@@ -997,7 +994,6 @@ install = {cmd = 'python -m pip install -e .', cwd = 'Baselines/LightGlue', depe
 # Core Libraries
 pytorch-gpu = "*"
 torchvision = "*"
-pytorch_scatter = "*"
 numpy = "*"
 opencv = "*"
 
