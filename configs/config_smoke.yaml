@@ -1,6 +1,0 @@
-rgbdtum:
-  - 'rgbd_dataset_freiburg1_xyz'
-eth:
-  - 'table_3'
-euroc:
-  - 'MH_01_easy'
