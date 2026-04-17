@@ -446,7 +446,6 @@ platforms = ["linux-64"]
 [feature.vggtslam.dependencies]
 vggtslam-vslamlab = { channel = "https://prefix.dev/ai-demos" }
 gtsam = { channel = "fontan" }
-# open3d — temporarily removed (libboost/fmt conflict with pytorch 2.10)
 tqdm = "*"
 viser = "*"
 termcolor = "*"
@@ -454,6 +453,9 @@ pytorch-lightning = "*"
 huggingface_hub = "*"
 pytorch-metric-learning = "*"
 nodeenv = "*"
+
+[feature.vggtslam.pypi-dependencies]
+open3d = ">=0.17.0"
 
 [feature.vggtslam.tasks]
 git-clone = 'git clone https://huggingface.co/vslamlab/vggtslam-vslamlab Baselines/VGGT-SLAM'
@@ -967,7 +969,6 @@ trimesh = "*"
 matplotlib = "*"
 gradio = "==6.2.0"
 viser = "*"
-# open3d temporarily removed — libboost/fmt conflict with pytorch 2.10 + gtsam
 pytorch-metric-learning = "*"
 pytorch-lightning = "*"
 termcolor = "*"
@@ -975,6 +976,9 @@ virtualenv = ">=20.10.0"
 lz4 = "*"
 gtsam = { channel = "fontan" }
 nodeenv = "*"
+
+[feature.vggtslam-dev.pypi-dependencies]
+open3d = ">=0.17.0"
 
 # ########################################################################################################################
 # ########################################################################################################################
