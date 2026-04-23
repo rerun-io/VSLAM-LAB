@@ -80,11 +80,14 @@ class DatasetVSLAMLab(ABC):
         # Check if sequence is already available
         sequence_availability = self.check_sequence_availability(sequence_name, verbose=True)
         if sequence_availability == "available":
-            #print(f"{SCRIPT_LABEL}Sequence {self.dataset_color}{sequence_name}:\033[92m downloaded\033[0m")
             return
         if sequence_availability == "corrupted":
-            logger.error(f"\n{ws(4)}Files in sequence {sequence_name} are corrupted.\n{ws(4)}Removing and downloading again sequence {sequence_name}.\n{ws(4)}THIS PART OF THE CODE IS NOT YET IMPLEMENTED. REMOVE THE FILES MANUALLY ")
-            sys.exit(1)
+            # Fall through to download_process — every download_sequence_data
+            # implementation is idempotent (guards on file-existence), and the
+            # per-step create_* methods only do work when their outputs are
+            # missing, so re-running completes a partial run without
+            # redundant redownloads.
+            logger.warning(f"\n{ws(4)}Sequence {sequence_name} is incomplete — resuming download_process.")
 
         # Download process
         self.dataset_path.mkdir(parents=True, exist_ok=True)

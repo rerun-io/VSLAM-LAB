@@ -47,7 +47,6 @@ class DRUNKARDS_dataset(DatasetVSLAMLab):
                 output=str(sequence_path),
                 quiet=False,
                 use_cookies=False,
-                remaining_ok=True,
                 resume=True,
             )
 

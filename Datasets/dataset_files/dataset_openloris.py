@@ -35,14 +35,19 @@ class OPENLORIS_dataset(DatasetVSLAMLab):
         if sequence_path.exists():
             return  
         
-        compressed_name_ext = sequence_name + '.7z' 
+        compressed_name_ext = sequence_name + '.7z'
         compressed_file = self.dataset_path_raw / compressed_name_ext
         if not compressed_file.exists():
             file_path = hf_hub_download(repo_id=self.repo_id, filename=_get_compressed_file_name(sequence_name), repo_type='dataset')
             decompressFile(file_path, self.dataset_path_raw)
 
-            if not sequence_name.startswith("corridor1-1"):   
-                decompressFile(compressed_file, self.dataset_path_raw)
+        # .7z extraction must run independently of the tar download — the tar
+        # for one sequence (e.g. cafe1-1_2-package.tar) produces .7z files for
+        # ALL sequences in its group (cafe1-1.7z, cafe1-2.7z), so cafe1-2's
+        # .7z can already exist before cafe1-2 is ever processed.
+        seq_folder_raw = self.dataset_path_raw / sequence_name
+        if not seq_folder_raw.exists() and not sequence_name.startswith("corridor1-1"):
+            decompressFile(compressed_file, self.dataset_path_raw)
 
     def create_rgb_folder(self, sequence_name: str) -> None:
         pass

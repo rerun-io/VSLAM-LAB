@@ -71,8 +71,9 @@ class HILTI2022_dataset(DatasetVSLAMLab):
             rgb_path.mkdir(parents=True, exist_ok=True)
 
             inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
-            command = f"pixi run -e ros1 extract-rosbag-frames {inputs}"
-            subprocess.run(command, shell=True)
+            # command = f"pixi run -e ros1 extract-rosbag-frames {inputs}"
+            command = f"pixi run extract-bag-frames {inputs}"
+            subprocess.run(command, shell=True, check=True)
 
     def create_rgb_csv(self, sequence_name: str) -> None:
         pass
@@ -87,8 +88,8 @@ class HILTI2022_dataset(DatasetVSLAMLab):
             return
 
         inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {imu_topic}"
-        command = f"pixi run -e ros1 extract-rosbag-imu {inputs}"
-        subprocess.run(command, shell=True)
+        command = f"pixi run extract-bag-imu {inputs}"
+        subprocess.run(command, shell=True, check=True)
 
         rgb_csv = sequence_path / "rgb.csv"
         imu_csv = sequence_path / "imu_0.csv"
@@ -207,3 +208,7 @@ class HILTI2022_dataset(DatasetVSLAMLab):
             return "exp01_construction_ground_level.txt"
         if sequence_name == "exp14_basement_2":
             return "exp14_basement_2_imu.txt"
+        if sequence_name == "exp05_construction_upper_level_2":
+            return "exp05_construction_upper_level_2.txt"
+        if sequence_name == "exp06_construction_upper_level_3":
+            return "exp06_construction_upper_level_3.txt"

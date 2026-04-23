@@ -3,7 +3,7 @@ name = "VSLAM-LAB"
 version = "0.1.0"
 description = "VSLAM-LAB"
 channels = ["https://prefix.dev/conda-forge"]
-platforms = ["linux-64"]
+platforms = ["linux-64", "linux-aarch64"]
 
 [tasks]
 clean-swap = { cmd = "sudo /sbin/swapoff -a && sudo /sbin/swapon -a" }
@@ -30,6 +30,7 @@ glomap = { features = ["glomap", "colmap"], solve-group = "colmap" }
 orbslam3 = { features = ["orbslam3"], solve-group = "orb" }
 okvis2 = { features = ["okvis2"], solve-group = "okvis" }
 pycuvslam = { features = ["pycuvslam","cuda129", "py10"] }
+pycuvslam-aarch64 = { features = ["pycuvslam-aarch64"] }
 vggt = { features = ["vggt", "cuda129", "py11"], solve-group = "vggt" }
 vggtslam = { features = ["vggtslam", "cuda129", "py11"], solve-group = "vggt" }
 
@@ -54,7 +55,7 @@ ros2 = { features = ["ros2"], solve-group = "ros2" }
 # VSLAM-LAB main pipeline
 [feature.vslamlab]
 channels = ["https://prefix.dev/conda-forge"]
-platforms = ["linux-64"]
+platforms = ["linux-64", "linux-aarch64"]
 
 [feature.vslamlab.tasks]
 vslamlab.cmd = "python vslamlab_gui.py vslamlab {{ exp_yaml }} {{ overwrite }}"
@@ -112,6 +113,14 @@ download-sequence = "python vslamlab_gui.py download_sequence"
 download-sequences = "python vslamlab_gui.py download_sequences"
 download-dataset = "python vslamlab_gui.py download_dataset"
 
+# Pure-Python rosbag extractors (via `rosbags`). Work on linux-64 AND linux-aarch64,
+# unlike the ros1/ros2 feature tasks which are platform-locked.
+# `python -O` disables asserts — rosbags 0.11 enforces a strict type-digest
+# check on ROS2 sqlite bags that some bags (e.g. HILTI 2026) fail even though
+# their embedded msgdefs parse correctly. -O lets us read those bags.
+extract-bag-frames = "python -O Datasets/extra-files/extract_bag_frames.py"
+extract-bag-imu = "python -O Datasets/extra-files/extract_bag_imu.py"
+
 run-exp = "python vslamlab_gui.py run_exp"
 evaluate-exp = "python vslamlab_gui.py evaluate_exp"
 compare-exp = "python vslamlab_gui.py compare_exp"
@@ -145,6 +154,7 @@ viser = "*"
 open3d = "*"
 gdown = "*"
 yt-dlp = "*"
+rosbags = "*"
 
 # [feature.development.tasks]
 # validate-dataset.cmd = 'python validate_dataset.py {{ dataset_name }}'
@@ -401,6 +411,43 @@ rerun-sdk = "=0.22.1"
 scipy = "=1.14.1"
 pandas = "*"
 opencv = "*"
+
+# ########################################################################################################################
+# ########################################################################################################################
+# pycuvslam-aarch64 (Grace/Jetson — conda-forge aarch64 CUDA 12 userspace)
+[feature.pycuvslam-aarch64]
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["linux-aarch64"]
+
+[feature.pycuvslam-aarch64.system-requirements]
+cuda = "12.0"
+
+[feature.pycuvslam-aarch64.tasks]
+git-clone = './git-clone.sh VSLAM-LAB PyCuVSLAM-VSLAM-LAB PyCuVSLAM'
+# No-op: the editable cuvslam install is handled by [feature.pycuvslam-aarch64.pypi-dependencies].
+install = "true"
+execute-mono = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_mono.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-rgbd = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_rgbd.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-stereo = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-stereo-vi = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo_vi.py', cwd = 'Baselines/PyCuVSLAM' }
+
+[feature.pycuvslam-aarch64.dependencies]
+python = "3.10.*"
+libstdcxx-ng = "*"
+libcublas = "*"
+libcusolver = "*"
+git-lfs = "*"
+numpy = "=2.2.4"
+pillow = "=11.1.0"
+pyyaml = "=6.0.2"
+scipy = "=1.14.1"
+pandas = "*"
+opencv = "*"
+
+[feature.pycuvslam-aarch64.pypi-dependencies]
+# rerun-sdk 0.22.1 only has a manylinux_2_31 wheel for aarch64; 0.23+ ship manylinux_2_28.
+rerun-sdk = ">=0.23,<0.24"
+cuvslam = { path = "Baselines/PyCuVSLAM/bin/aarch64", editable = true }
 
 # ########################################################################################################################
 # ########################################################################################################################

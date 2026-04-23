@@ -37,6 +37,7 @@ class HILTI2026_dataset(DatasetVSLAMLab):
 
     def download_sequence_data(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
+        sequence_path.mkdir(parents=True, exist_ok=True)
 
         # Download calibration file
         calibration_file = self.dataset_path / CALIBRATION_FILE
@@ -50,7 +51,6 @@ class HILTI2026_dataset(DatasetVSLAMLab):
                 quiet=False,
                 use_cookies=False,
                 resume=True,
-                fuzzy=True,
             )
 
         # Download groundtruth file
@@ -63,7 +63,6 @@ class HILTI2026_dataset(DatasetVSLAMLab):
                 quiet=False,
                 use_cookies=False,
                 resume=True,
-                fuzzy=True,
             )
 
         # Download rosbag
@@ -77,7 +76,6 @@ class HILTI2026_dataset(DatasetVSLAMLab):
             output=str(sequence_path),
             quiet=False,
             use_cookies=False,
-            remaining_ok=True,
             resume=True,
         )
 
@@ -92,8 +90,8 @@ class HILTI2026_dataset(DatasetVSLAMLab):
             rgb_path.mkdir(parents=True, exist_ok=True)
 
             inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --image_topic {image_topic} --cam {cam}"
-            command = f"pixi run -e ros2 extract-ros2bag-frames {inputs}"
-            subprocess.run(command, shell=True)
+            command = f"pixi run extract-bag-frames {inputs}"
+            subprocess.run(command, shell=True, check=True)
 
     def create_rgb_csv(self, sequence_name: str) -> None:
         pass
@@ -106,8 +104,9 @@ class HILTI2026_dataset(DatasetVSLAMLab):
             return
 
         inputs = f"--rosbag_path {rosbag} --sequence_path {sequence_path} --imu_topic {IMU_TOPIC}"
-        command = f"pixi run -e ros2 extract-ros2bag-imu {inputs}"
-        subprocess.run(command, shell=True)
+        # command = f"pixi run -e ros2 extract-ros2bag-imu {inputs}"
+        command = f"pixi run extract-bag-imu {inputs}"
+        subprocess.run(command, shell=True, check=True)
 
         rgb_csv = sequence_path / "rgb.csv"
         imu_csv = sequence_path / "imu_0.csv"

@@ -1,4 +1,5 @@
 import os.path
+import platform
 from pathlib import Path
 from Baselines.BaselineVSLAMLab import BaselineVSLAMLab
 
@@ -14,6 +15,8 @@ class PYCUVSLAM_baseline(BaselineVSLAMLab):
         
         # Initialize the baseline
         super().__init__(baseline_name, baseline_folder, default_parameters)
+        if platform.machine() == 'aarch64':
+            self.baseline_name = 'pycuvslam-aarch64'
         self.color = (0.850, 0.700, 0.300)
         self.modes = ['mono', 'rgbd', 'stereo', 'stereo-vi']
         self.camera_models = ['pinhole', 'radtan4', 'radtan5', 'equid4']
@@ -22,5 +25,5 @@ class PYCUVSLAM_baseline(BaselineVSLAMLab):
         return super().build_execute_command_python(exp_it, exp, dataset, sequence_name)
         
     def is_installed(self) -> tuple[bool, str]: 
-        is_installed = os.path.isfile(os.path.join(self.baseline_path, 'install_pycuvslam.txt'))
+        is_installed = os.path.isfile(os.path.join(self.baseline_path, f'install_{self.baseline_name}.txt'))
         return (True, 'is installed') if is_installed else (False, 'not installed (auto install available)')
