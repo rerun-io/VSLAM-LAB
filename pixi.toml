@@ -427,11 +427,11 @@ git-clone = './git-clone.sh pablovela5620 PyCuVSLAM-VSLAM-LAB PyCuVSLAM'
 # Installed via a post-clone task (mirrors the x86_64 feature). A `path` pypi-dependency
 # on Baselines/PyCuVSLAM/bin/aarch64 would deadlock: pixi resolves pypi-deps before
 # running any task, so the path wouldn't exist yet on a fresh checkout.
-install = { cmd = "python -m pip install -e bin/aarch64", cwd = "../PyCuVSLAM-VSLAM-LAB" }
-execute-mono = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_mono.py', cwd = '../PyCuVSLAM-VSLAM-LAB' }
-execute-rgbd = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_rgbd.py', cwd = '../PyCuVSLAM-VSLAM-LAB' }
-execute-stereo = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo.py', cwd = '../PyCuVSLAM-VSLAM-LAB' }
-execute-stereo-vi = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo_vi.py', cwd = '../PyCuVSLAM-VSLAM-LAB' }
+install = { cmd = "python -m pip install -e bin/aarch64", cwd = "Baselines/PyCuVSLAM" }
+execute-mono = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_mono.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-rgbd = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_rgbd.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-stereo = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo.py', cwd = 'Baselines/PyCuVSLAM' }
+execute-stereo-vi = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo_vi.py', cwd = 'Baselines/PyCuVSLAM' }
 
 [feature.pycuvslam-aarch64.dependencies]
 python = "3.10.*"
