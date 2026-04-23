@@ -424,8 +424,10 @@ cuda = "12.0"
 
 [feature.pycuvslam-aarch64.tasks]
 git-clone = './git-clone.sh pablovela5620 PyCuVSLAM-VSLAM-LAB PyCuVSLAM'
-# No-op: the editable cuvslam install is handled by [feature.pycuvslam-aarch64.pypi-dependencies].
-install = "true"
+# Installed via a post-clone task (mirrors the x86_64 feature). A `path` pypi-dependency
+# on Baselines/PyCuVSLAM/bin/aarch64 would deadlock: pixi resolves pypi-deps before
+# running any task, so the path wouldn't exist yet on a fresh checkout.
+install = { cmd = "python -m pip install -e bin/aarch64", cwd = "Baselines/PyCuVSLAM" }
 execute-mono = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_mono.py', cwd = 'Baselines/PyCuVSLAM' }
 execute-rgbd = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_rgbd.py', cwd = 'Baselines/PyCuVSLAM' }
 execute-stereo = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH && python vslamlab_pycuvslam_stereo.py', cwd = 'Baselines/PyCuVSLAM' }
@@ -433,6 +435,7 @@ execute-stereo-vi = { cmd = 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRAR
 
 [feature.pycuvslam-aarch64.dependencies]
 python = "3.10.*"
+pip = "*"
 libstdcxx-ng = "*"
 libcublas = "*"
 libcusolver = "*"
@@ -447,7 +450,6 @@ opencv = "*"
 [feature.pycuvslam-aarch64.pypi-dependencies]
 # rerun-sdk 0.22.1 only has a manylinux_2_31 wheel for aarch64; 0.23+ ship manylinux_2_28.
 rerun-sdk = ">=0.23,<0.24"
-cuvslam = { path = "Baselines/PyCuVSLAM/bin/aarch64", editable = true }
 
 # ########################################################################################################################
 # ########################################################################################################################
