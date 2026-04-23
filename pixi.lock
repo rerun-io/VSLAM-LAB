@@ -8128,7 +8128,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/rdma-core-61.0-h192683f_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/re2-2025.11.05-h5301d42_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/readline-8.3-h853b02a_0.conda
-      - conda: https://prefix.dev/conda-forge/linux-64/rerun-sdk-0.22.1-py310hd05e49f_0.conda
+      - conda: https://prefix.dev/conda-forge/linux-64/rerun-sdk-0.31.3-py310h66b8e67_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/s2n-1.7.1-h1cbb8d7_1.conda
       - conda: https://prefix.dev/conda-forge/linux-64/scipy-1.14.1-py310hfcf56fc_2.conda
       - conda: https://prefix.dev/conda-forge/linux-64/sdl2-2.32.56-h54a6638_0.conda
@@ -8413,7 +8413,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/zstd-1.5.7-h85ac4a6_6.conda
       - pypi: https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2e/08/3e56a18819462210432ae37d10f5c8eed3828be1d6c751b6e6a2e93c286a/pyarrow-23.0.1-cp310-cp310-manylinux_2_28_aarch64.whl
-      - pypi: https://files.pythonhosted.org/packages/2f/d2/9809c34f486cd402ad34287efaf1f546052e7876d66821aa152a23e9cd84/rerun_sdk-0.23.4-cp39-abi3-manylinux_2_28_aarch64.whl
+      - pypi: https://files.pythonhosted.org/packages/e2/8c/219d612b61d2fde3731068cd3ba1ef1e9bb646e06923361574b52529fa96/rerun_sdk-0.31.3-cp310-abi3-manylinux_2_28_aarch64.whl
       - pypi: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
   ros1:
     channels:
@@ -35061,29 +35061,45 @@ packages:
   license: ISC
   size: 25875
   timestamp: 1733772348802
-- pypi: https://files.pythonhosted.org/packages/2f/d2/9809c34f486cd402ad34287efaf1f546052e7876d66821aa152a23e9cd84/rerun_sdk-0.23.4-cp39-abi3-manylinux_2_28_aarch64.whl
+- pypi: https://files.pythonhosted.org/packages/e2/8c/219d612b61d2fde3731068cd3ba1ef1e9bb646e06923361574b52529fa96/rerun_sdk-0.31.3-cp310-abi3-manylinux_2_28_aarch64.whl
   name: rerun-sdk
-  version: 0.23.4
-  sha256: 2aec8c65d2f1fee0df4b145389fab23fe91c7f07a3ed0b6d2003c177c3437ca4
+  version: 0.31.3
+  sha256: 90deef848af60d544071e219ce2f608f64090a50b75d0cd951c24933a0260edd
   requires_dist:
   - attrs>=23.1.0
   - numpy>=2
   - pillow>=8.0.0
   - pyarrow>=18.0.0
   - typing-extensions>=4.5
-  - pytest==7.1.2 ; extra == 'tests'
-  - rerun-notebook==0.23.4 ; extra == 'notebook'
-  requires_python: '>=3.9'
-- conda: https://prefix.dev/conda-forge/linux-64/rerun-sdk-0.22.1-py310hd05e49f_0.conda
-  sha256: adc9038a5cc7591e7cac620a489f791958a24232e792f0da80e64e03ae1f5d94
-  md5: 6599181c67761d7b6f1e3d7005caadee
+  - inline-snapshot==0.31.1 ; extra == 'tests'
+  - opencv-python>4.6 ; extra == 'tests'
+  - pandas>=2 ; extra == 'tests'
+  - polars==1.36.1 ; extra == 'tests'
+  - pytest==8.4.2 ; extra == 'tests'
+  - semver>=3.0,<3.1 ; extra == 'tests'
+  - syrupy==5.0.0 ; extra == 'tests'
+  - tomli==2.0.1 ; extra == 'tests'
+  - torch>=2.5 ; extra == 'tests'
+  - datafusion==52.3.0 ; extra == 'tests'
+  - rerun-notebook==0.31.3 ; extra == 'notebook'
+  - datafusion==52.3.0 ; extra == 'datafusion'
+  - pandas>=2 ; extra == 'datafusion'
+  - datafusion==52.3.0 ; extra == 'dataplatform'
+  - pandas>=2 ; extra == 'dataplatform'
+  - datafusion==52.3.0 ; extra == 'all'
+  - pandas>=2 ; extra == 'all'
+  - rerun-notebook==0.31.3 ; extra == 'all'
+  requires_python: '>=3.10'
+- conda: https://prefix.dev/conda-forge/linux-64/rerun-sdk-0.31.3-py310h66b8e67_0.conda
+  sha256: 34320d866eb1279c80deae2fd126c4f9534ebae5e57b255416f2016b7dd1c0c1
+  md5: a4c396c3d20f5d53353b7ff299ee7de0
   depends:
   - __glibc >=2.17,<3.0.a0
   - anywidget
   - attrs >=23.1.0
   - jupyter-ui-poll
-  - libgcc >=13
-  - libstdcxx >=13
+  - libgcc >=14
+  - libstdcxx >=14
   - numpy >=1.23
   - pillow
   - pyarrow >=14.0.2
@@ -35093,8 +35109,8 @@ packages:
   constrains:
   - __glibc >=2.17
   license: MIT OR Apache-2.0
-  size: 43632582
-  timestamp: 1740765853182
+  size: 101837431
+  timestamp: 1776191959740
 - pypi: https://files.pythonhosted.org/packages/67/f3/6cd296376653270ac1b423bb30bd70942d9916b6978c6f40472d6ac038e7/retrying-1.4.2-py3-none-any.whl
   name: retrying
   version: 1.4.2
