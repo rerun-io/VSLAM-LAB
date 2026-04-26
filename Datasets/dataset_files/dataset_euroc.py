@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 from typing import Any
 from pathlib import Path
-from decimal import Decimal
 from contextlib import suppress
 
 from Datasets.DatasetVSLAMLab import DatasetVSLAMLab
@@ -39,7 +38,7 @@ class EUROC_dataset(DatasetVSLAMLab):
         subfolder_zip = self.dataset_path / f"{subfolder}.zip"
         sequence_zip = self.dataset_path / subfolder / sequence_name / f"{sequence_name}.zip"
         if not content_zip.exists() and not subfolder_zip.exists() and not sequence_zip.exists() and not subfolder_path.exists():
-            downloadFile(url, str(self.dataset_path), file_size=file_size)    
+            downloadFile(url, str(self.dataset_path), file_size=file_size)
             content_zip.rename(subfolder_zip)
 
         print(f"Decompressing {sequence_zip} to {sequence_path}...")
@@ -48,21 +47,6 @@ class EUROC_dataset(DatasetVSLAMLab):
 
         if not sequence_path.exists():
             decompressFile(str(sequence_zip), str(sequence_path))
-        
-        # Download TUM supplemental ground-truth if needed
-        supp_root = self.dataset_path / "supp_v2"
-        if not supp_root.exists():
-            supp_zip = self.dataset_path / "supp_v2.zip"
-            supp_url = "https://cvg.cit.tum.de/mono/supp_v2.zip"
-            if not supp_zip.exists():
-                downloadFile(supp_url, str(self.dataset_path))
-
-            if supp_root.exists():
-                shutil.rmtree(supp_root)
-
-            decompressFile(str(supp_zip), str(supp_root))
-            with suppress(FileNotFoundError):
-                supp_zip.unlink()
 
     def create_rgb_folder(self, sequence_name: str) -> None:
         sequence_path = self.dataset_path / sequence_name
@@ -178,11 +162,31 @@ class EUROC_dataset(DatasetVSLAMLab):
         self.write_calibration_yaml(sequence_name=sequence_name, rgb=[rgb0, rgb1], imu=[imu])
     
     def create_groundtruth_csv(self, sequence_name: str) -> None:
-        """
-        Write groundtruth.csv from TUM 'supp_v2/gtFiles/mav_<sequence>.txt'.
+        """Write groundtruth.csv from EUROC's canonical 6DOF GT.
+
+        Source: ``<seq>/mav0/state_groundtruth_estimate0/data.csv``, present
+        after ``download_sequence_data`` extracts the canonical EUROC zip
+        from ETH-Zürich. Format (header line begins with ``#``):
+
+            timestamp [ns], p_RS_R_x, p_RS_R_y, p_RS_R_z,
+            q_RS_w, q_RS_x, q_RS_y, q_RS_z,
+            v_RS_R_x, v_RS_R_y, v_RS_R_z,
+            b_w_RS_S_x, b_w_RS_S_y, b_w_RS_S_z,
+            b_a_RS_S_x, b_a_RS_S_y, b_a_RS_S_z
+
+        Note: ``q_w`` comes FIRST in the upstream column order; we reorder
+        to ``(qx, qy, qz, qw)`` for VSLAM-LAB's output convention.
+
+        This replaces a previous read from TUM-Mono's
+        ``supp_v2/gtFiles/mav_<seq>.txt`` which is by-design ATE-only and
+        ships constant ``q = 1 0 0 0`` for every row, producing GT that
+        translates but never rotates. Note ``(1,0,0,0)`` in
+        ``(qx,qy,qz,qw)`` is *not* identity (identity is ``(0,0,0,1)``);
+        it's a 180° X rotation. Either way, constant rotation across all
+        frames is the practical bug.
         """
         seq = self.dataset_path / sequence_name
-        src = self.dataset_path / "supp_v2" / "gtFiles" / f"mav_{sequence_name}.txt"
+        src = seq / "mav0" / "state_groundtruth_estimate0" / "data.csv"
         dst = seq / "groundtruth.csv"
 
         if not src.exists():
@@ -193,18 +197,19 @@ class EUROC_dataset(DatasetVSLAMLab):
         tmp = dst.with_suffix(".csv.tmp")
         with open(src, "r", encoding="utf-8") as fin, open(tmp, "w", encoding="utf-8", newline="") as fout:
             w = csv.writer(fout)
-            w.writerow(["ts (ns)","tx (m)","ty (m)","tz (m)","qx","qy","qz","qw"])
+            w.writerow(["ts (ns)", "tx (m)", "ty (m)", "tz (m)", "qx", "qy", "qz", "qw"])
 
             for line in fin:
                 s = line.strip()
-                if not s or "NaN" in s:
+                if not s or s.startswith("#"):
                     continue
-                parts = s.replace(",", " ").split()
+                if "nan" in s.lower():
+                    continue
+                parts = s.split(",")
                 if len(parts) < 8:
                     continue
-                ts_s, tx, ty, tz, qx, qy, qz, qw = parts[:8]
-                ts_ns = int(Decimal(ts_s) * Decimal(10**9))
-                w.writerow([ts_ns, tx, ty, tz, qx, qy, qz, qw])
+                ts, x, y, z, qw, qx, qy, qz = parts[:8]  # upstream: qw first
+                w.writerow([ts, x, y, z, qx, qy, qz, qw])  # reorder to xyzw
 
         tmp.replace(dst)
         with suppress(FileNotFoundError):
