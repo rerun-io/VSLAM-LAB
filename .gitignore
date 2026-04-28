@@ -52,3 +52,6 @@ Baselines/ros2_ws
 
 # download logs
 download_logs/*
+
+# playwright-cli verification artifacts (transient screenshots, snapshots)
+.playwright-cli/
